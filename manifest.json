@@ -2,5 +2,8 @@
   "name": "better-campus",
   "description": "Browser-extension with nice looking skin for fhstp ecampus",
   "version": "1.0.0",
-  "manifest_version": 3
+  "manifest_version": 3,
+  "action": {
+    "default_popup": "src/popup.html"
+  }
 }
