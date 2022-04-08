@@ -22,7 +22,8 @@
   "web_accessible_resources": [
     {
       "resources": [
-        "src/override.css"
+        "src/override.css",
+        "logo.png"
       ],
       "matches": [
         "https://ecampus.fhstp.ac.at/*"
