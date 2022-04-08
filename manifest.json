@@ -23,7 +23,8 @@
     {
       "resources": [
         "src/override.css",
-        "logo.png"
+        "logo.png",
+        "hideConfig.json"
       ],
       "matches": [
         "https://ecampus.fhstp.ac.at/*"

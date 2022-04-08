@@ -1,5 +1,10 @@
-const cssUrl = chrome.runtime.getURL("src/override.css");
-const logoUrl = chrome.runtime.getURL("logo.png");
+function fileUrl(path) {
+    return chrome.runtime.getURL(path);
+}
+
+const cssUrl = fileUrl("src/override.css");
+const logoUrl = fileUrl("logo.png");
+const hideUrl = fileUrl("hideConfig.json")
 
 // Override css
 
@@ -11,4 +16,13 @@ document.getElementsByTagName("head")[0].appendChild(link);
 
 // Override logo
 
-document.getElementsByClassName("img-fluid")[0].src = logoUrl
+document.getElementsByClassName("img-fluid")[0].src = logoUrl;
+
+// Hide elements
+
+fetch(hideUrl)
+    .then(it => it.json())
+    .then(hideSelectors =>
+              hideSelectors
+                  .flatMap(it => Array.from(document.querySelectorAll(it)))
+                  .forEach(it => it.style.display = "none"))
