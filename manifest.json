@@ -8,12 +8,25 @@
   },
   "content_scripts": [
     {
-      "matches": ["https://ecampus.fhstp.ac.at/*"],
-      "css": ["src/content.css"],
-      "js": ["src/content.js"]
+      "matches": [
+        "https://ecampus.fhstp.ac.at/*"
+      ],
+      "js": [
+        "src/content.js"
+      ]
     }
   ],
   "action": {
     "default_popup": "src/popup.html"
-  }
+  },
+  "web_accessible_resources": [
+    {
+      "resources": [
+        "src/override.css"
+      ],
+      "matches": [
+        "https://ecampus.fhstp.ac.at/*"
+      ]
+    }
+  ]
 }
