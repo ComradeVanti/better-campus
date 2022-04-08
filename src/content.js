@@ -26,3 +26,8 @@ fetch(hideUrl)
               hideSelectors
                   .flatMap(it => Array.from(document.querySelectorAll(it)))
                   .forEach(it => it.style.display = "none"))
+
+// Replace content
+
+document.querySelector(".site-name")
+    .innerHTML = `<img src=${logoUrl} class="logo">`

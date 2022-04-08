@@ -16,6 +16,11 @@ body {
     color: var(--onSurface) !important;
 }
 
+.logo {
+    height: 25px;
+    object-fit: contain;
+}
+
 #page-content {
     margin-top: 20px;
 }
