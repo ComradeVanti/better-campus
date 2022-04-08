@@ -1,12 +1,17 @@
 :root {
     --background: #242424;
     --surface: #363636;
+    --onSurface: #eeeeee;
 }
 
 body {
-    background-color: var(--background);
+    background-color: var(--background) !important;
 }
 
-.navbar-bootswatch, .card-body, .card, .bg-dark, #region-main  {
-    background-color: var(--surface);
+.navbar-bootswatch, .card-body, .card, .bg-dark, #region-main {
+    background-color: var(--surface) !important;
+}
+
+.card-body, .nav-link, .navbar-brand, .text-muted, #region-main {
+    color: var(--onSurface) !important;
 }
