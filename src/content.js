@@ -6,6 +6,10 @@ const cssUrl = fileUrl("src/override.css");
 const logoUrl = fileUrl("logo.png");
 const hideUrl = fileUrl("hideConfig.json")
 
+// Reword title
+
+document.title = "eCampus <3"
+
 // Override css
 
 const link = document.createElement("link");
