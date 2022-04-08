@@ -1,8 +1,12 @@
 :root {
     --background: #242424;
+    --surface: #363636;
 }
 
 body {
     background-color: var(--background);
 }
 
+.navbar-bootswatch, .card-body, .card, .bg-dark, #region-main  {
+    background-color: var(--surface);
+}
