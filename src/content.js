@@ -5,6 +5,7 @@ function fileUrl(path) {
 const cssUrl = fileUrl("src/override.css");
 const logoUrl = fileUrl("logo.png");
 const hideUrl = fileUrl("hideConfig.json")
+const quickLinksUrl = fileUrl("src/quickLinks.html")
 
 // Reword title
 
@@ -35,3 +36,11 @@ fetch(hideUrl)
 
 document.querySelector(".site-name")
     .innerHTML = `<img src=${logoUrl} class="logo">`
+
+fetch(quickLinksUrl)
+    .then(it => it.text())
+    .then(it => document.querySelector("nav>a+ul").innerHTML = it)
+
+// Change classes
+
+document.querySelector("nav>a+ul").className = "quick-links"

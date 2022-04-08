@@ -23,6 +23,7 @@
     {
       "resources": [
         "src/override.css",
+        "src/quickLinks.html",
         "logo.png",
         "hideConfig.json"
       ],

@@ -2,6 +2,7 @@
     --background: #242424;
     --surface: #363636;
     --onSurface: #eeeeee;
+    --primary: #666DFF
 }
 
 body {
@@ -19,6 +20,36 @@ body {
 .logo {
     height: 25px;
     object-fit: contain;
+}
+
+.quick-links {
+    position: relative;
+    display: inline-block;
+}
+
+.links-content {
+    display: none;
+    position: absolute;
+    background-color: var(--surface);
+    min-width: 160px;
+    padding: 12px 16px;
+    z-index: 1;
+    flex-direction: column;
+}
+
+.link-title {
+    color: var(--onSurface);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.quick-links:hover .links-content  {
+    display: flex;
+}
+
+.quick-link {
+    color: var(--primary);
 }
 
 #page-content {
