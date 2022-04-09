@@ -2,11 +2,25 @@
     --background: #242424;
     --surface: #363636;
     --onSurface: #eeeeee;
-    --primary: #666DFF
+    --primary: #666DFF;
+    --secondary: #d97a4f;
+    --secondaryDark: #9f512f;
 }
 
 body {
     background-color: var(--background) !important;
+}
+
+a:link {
+    color: var(--secondary);
+}
+
+a:hover {
+    color: var(--secondaryDark);
+}
+
+a:visited {
+    color: var(--secondaryDark);
 }
 
 .navbar-bootswatch, .card-body, .card, .bg-dark, #region-main {
@@ -46,12 +60,8 @@ body {
     justify-self: center;
 }
 
-.quick-links:hover .links-content  {
+.quick-links:hover .links-content {
     display: flex;
-}
-
-.quick-link {
-    color: var(--primary);
 }
 
 #page-content {
