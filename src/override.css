@@ -7,6 +7,10 @@
     --secondaryDark: #9f512f;
 }
 
+* {
+    color: var(--onSurface)
+}
+
 body {
     background-color: var(--background) !important;
 }
@@ -27,8 +31,6 @@ a:visited {
     background-color: var(--surface) !important;
 }
 
-.card-body, .nav-link, .navbar-brand, .text-muted, #region-main {
-    color: var(--onSurface) !important;
 }
 
 .logo {
