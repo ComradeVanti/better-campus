@@ -38,6 +38,17 @@ a:visited {
     color: var(--secondaryLight) !important;
 }
 
+input[type=text], input[type=number], input[type=password] {
+    background-color: var(--surfaceVariant) !important;
+    color: var(--onSurfaceVariant) !important;
+    border: 0 !important;
+    border-radius: 0.25rem;
+}
+
+input[type=text]:focus, input[type=number]:focus, input[type=password]:focus {
+    outline: none;
+}
+
 .card {
     background-color: var(--surface) !important;
     color: var(--onSurface) !important;
@@ -75,12 +86,6 @@ a:visited {
 
 .btn-secondary:active {
     background-color: var(--secondaryDark) !important;
-}
-
-.form-control {
-    background-color: var(--surfaceVariant) !important;
-    color: var(--onSurfaceVariant) !important;
-    border: 0 !important;
 }
 
 .navbar-bootswatch {
