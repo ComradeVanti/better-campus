@@ -55,6 +55,20 @@ a:visited {
     background-color: var(--primaryDark) !important;
 }
 
+.btn-secondary {
+    background-color: var(--secondary) !important;
+    color: var(--onSecondary) !important;
+    border: 0 !important;
+}
+
+.btn-secondary:hover {
+    background-color: var(--secondaryLight) !important;
+}
+
+.btn-secondary:active {
+    background-color: var(--secondaryDark) !important;
+}
+
 #page-footer {
     background-color: var(--surface) !important;
     color: var(--onSurface) !important;
