@@ -2,6 +2,8 @@
     --background: #242424 !important;
     --surface: #363636 !important;
     --onSurface: #eeeeee !important;
+    --surfaceVariant: #25282a !important;
+    --onSurfaceVariant: #eeeeee !important;
     --primary: #448aff !important;
     --primaryLight: #83b9ff !important;
     --primaryDark: #005ecb !important;
@@ -67,6 +69,12 @@ a:visited {
 
 .btn-secondary:active {
     background-color: var(--secondaryDark) !important;
+}
+
+.form-control {
+    background-color: var(--surfaceVariant) !important;
+    color: var(--onSurfaceVariant) !important;
+    border: 0 !important;
 }
 
 #page-footer {
