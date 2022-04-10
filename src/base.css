@@ -10,3 +10,8 @@
 body {
     background-color: var(--background) !important;
 }
+
+#page-footer {
+    background-color: var(--surface) !important;
+    color: var(--onSurface) !important;
+}
