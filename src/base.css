@@ -74,17 +74,17 @@ input[type=text]:focus, input[type=number]:focus, input[type=password]:focus {
     background-color: var(--primaryDark) !important;
 }
 
-.btn-secondary {
+.btn-secondary, .btn-light {
     background-color: var(--secondary) !important;
     color: var(--onSecondary) !important;
     border: 0 !important;
 }
 
-.btn-secondary:hover {
+.btn-secondary:hover, .btn-light:hover {
     background-color: var(--secondaryLight) !important;
 }
 
-.btn-secondary:active {
+.btn-secondary:active, .btn-light:active {
     background-color: var(--secondaryDark) !important;
 }
 
