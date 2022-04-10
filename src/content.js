@@ -25,7 +25,7 @@ fetch(hideUrl)
 
 // Replace content
 
-document.querySelector(".site-name")
+document.querySelector(".navbar-brand")
     .innerHTML = `<img src=${logoUrl} class="logo">`
 
 fetch(quickLinksUrl)
@@ -35,3 +35,7 @@ fetch(quickLinksUrl)
 // Change classes
 
 document.querySelector("nav>a+ul").className = "quick-links"
+
+// Change element types
+
+
