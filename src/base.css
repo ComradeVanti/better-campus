@@ -89,3 +89,8 @@ a:visited {
     background-color: var(--surface) !important;
     color: var(--onSurface) !important;
 }
+
+#region-main {
+    background-color: var(--surface) !important;
+    color: var(--onSurface) !important;
+}
