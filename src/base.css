@@ -23,6 +23,20 @@ body {
     border: 0 !important;
 }
 
+.btn-primary {
+    background-color: var(--primary) !important;
+    color: var(--onPrimary) !important;
+    border: 0 !important;
+}
+
+.btn-primary:hover {
+    background-color: var(--primaryLight) !important;
+}
+
+.btn-primary:active {
+    background-color: var(--primaryDark) !important;
+}
+
 #page-footer {
     background-color: var(--surface) !important;
     color: var(--onSurface) !important;
