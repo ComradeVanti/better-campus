@@ -85,6 +85,18 @@ a:visited {
     background-color: var(--surface) !important;
 }
 
+.page-item.active .page-link {
+    border: 0 !important;
+    background-color: var(--primary) !important;
+    color: var(--onPrimary) !important;
+}
+
+.page-link {
+    border: 0 !important;
+    background-color: var(--surfaceVariant) !important;
+    color: var(--onSurfaceVariant) !important;
+}
+
 #page-footer {
     background-color: var(--surface) !important;
     color: var(--onSurface) !important;
