@@ -17,6 +17,23 @@ body {
     background-color: var(--background) !important;
 }
 
+a {
+    color: var(--secondary) !important;
+}
+
+a:hover {
+    color: var(--secondaryDark) !important;
+}
+
+a:active {
+    color: var(--secondaryDark) !important;
+    background-color: transparent !important;
+}
+
+a:visited {
+    color: var(--secondaryLight) !important;
+}
+
 .card {
     background-color: var(--surface) !important;
     color: var(--onSurface) !important;
