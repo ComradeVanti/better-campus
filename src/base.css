@@ -19,6 +19,7 @@ body {
 
 .card {
     background-color: var(--surface) !important;
+    color: var(--onSurface) !important;
     box-shadow: 0 0 5px 2px var(--shadow);
     border: 0 !important;
 }
