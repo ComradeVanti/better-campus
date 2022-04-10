@@ -81,6 +81,10 @@ a:visited {
     border: 0 !important;
 }
 
+.navbar-bootswatch {
+    background-color: var(--surface) !important;
+}
+
 #page-footer {
     background-color: var(--surface) !important;
     color: var(--onSurface) !important;
