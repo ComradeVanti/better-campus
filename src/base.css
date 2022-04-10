@@ -43,6 +43,10 @@ a:visited {
     border: 0 !important;
 }
 
+.card-header {
+    border-color: var(--surfaceVariant) !important;
+}
+
 .btn-primary {
     background-color: var(--primary) !important;
     color: var(--onPrimary) !important;
