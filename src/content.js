@@ -2,7 +2,6 @@ function fileUrl(path) {
     return chrome.runtime.getURL(path);
 }
 
-const cssUrl = fileUrl("src/override.css");
 const logoUrl = fileUrl("logo.png");
 const hideUrl = fileUrl("hideConfig.json")
 const quickLinksUrl = fileUrl("src/quickLinks.html")
@@ -10,14 +9,6 @@ const quickLinksUrl = fileUrl("src/quickLinks.html")
 // Reword title
 
 document.title = "eCampus <3"
-
-// Override css
-
-const link = document.createElement("link");
-link.href = cssUrl
-link.type = "text/css";
-link.rel = "stylesheet";
-document.getElementsByTagName("head")[0].appendChild(link);
 
 // Override logo
 

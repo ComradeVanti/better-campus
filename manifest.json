@@ -13,6 +13,9 @@
       ],
       "js": [
         "src/content.js"
+      ],
+      "css": [
+        "src/override.css"
       ]
     }
   ],
@@ -22,7 +25,6 @@
   "web_accessible_resources": [
     {
       "resources": [
-        "src/override.css",
         "src/quickLinks.html",
         "logo.png",
         "hideConfig.json"
