@@ -2,9 +2,14 @@
     --background: #242424;
     --surface: #363636;
     --onSurface: #eeeeee;
-    --primary: #666DFF;
-    --secondary: #d97a4f;
-    --secondaryDark: #9f512f;
+    --primary: #448aff;
+    --primaryLight: #83b9ff;
+    --primaryDark: #005ecb;
+    --onPrimary: #eeeeee;
+    --secondary: #f9a825;
+    --secondaryLight: #ffd95a;
+    --secondaryDark: #c17900;
+    --onSecondary: #111111;
     --shadow: #1e1e1e
 }
 
