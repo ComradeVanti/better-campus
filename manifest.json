@@ -12,10 +12,10 @@
         "https://ecampus.fhstp.ac.at/*"
       ],
       "js": [
-        "src/content.js"
+        "src/base.js"
       ],
       "css": [
-        "src/override.css"
+        "src/base.css"
       ]
     }
   ],
@@ -25,9 +25,7 @@
   "web_accessible_resources": [
     {
       "resources": [
-        "src/quickLinks.html",
-        "logo.png",
-        "hideConfig.json"
+        "logo.png"
       ],
       "matches": [
         "https://ecampus.fhstp.ac.at/*"
