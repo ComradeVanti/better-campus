@@ -13,6 +13,8 @@
     --secondaryDark: #c17900 !important;
     --onSecondary: #111111 !important;
     --shadow: #1e1e1e !important;
+    --danger: #961818 !important;
+    --onDanger: #eeeeee !important;
 }
 
 body {
@@ -95,6 +97,12 @@ a:visited {
     border: 0 !important;
     background-color: var(--surfaceVariant) !important;
     color: var(--onSurfaceVariant) !important;
+}
+
+.alert-danger {
+    background-color: var(--danger) !important;
+    color: var(--onDanger) !important;
+    border: 0 !important;
 }
 
 #page-footer {
