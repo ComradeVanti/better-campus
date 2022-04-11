@@ -22,20 +22,20 @@ body {
 }
 
 a {
-    color: var(--secondary) !important;
+    color: var(--primary) !important;
 }
 
 a:hover {
-    color: var(--secondaryDark) !important;
+    color: var(--primaryDark) !important;
 }
 
 a:active {
-    color: var(--secondaryDark) !important;
+    color: var(--primaryDark) !important;
     background-color: transparent !important;
 }
 
 a:visited {
-    color: var(--secondaryLight) !important;
+    color: var(--primaryLight) !important;
 }
 
 input[type=text], input[type=number], input[type=password] {
