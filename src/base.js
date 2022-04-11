@@ -62,7 +62,7 @@ function replaceIcons() {
         element.parentElement.removeChild(element)
     }
 
-    Array.from(document.querySelectorAll("img.activityicon"))
+    Array.from(document.querySelectorAll("img.activityicon, img.icon"))
         .forEach(it => {
             const replacement =
                 replacements.find(([search, _]) => it.src.includes(search))
