@@ -5,6 +5,7 @@
 ### Added
 
 - Toggle for dark-mode
+- Missing dark-mode for notifications popup
 
 ## 1.0.0
 

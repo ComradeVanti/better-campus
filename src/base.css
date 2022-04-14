@@ -25,6 +25,7 @@
 
 body {
     background-color: var(--background) !important;
+    color: var(--onSurface) !important;
 }
 
 a {
@@ -57,7 +58,6 @@ input[type=text]:focus, input[type=number]:focus, input[type=password]:focus {
 
 .card {
     background-color: var(--surface) !important;
-    color: var(--onSurface) !important;
     box-shadow: 0 0 5px 2px var(--shadow);
     border: 0 !important;
 }
@@ -114,6 +114,25 @@ input[type=text]:focus, input[type=number]:focus, input[type=password]:focus {
     background-color: var(--danger) !important;
     color: var(--onDanger) !important;
     border: 0 !important;
+}
+
+.popover-region-container {
+    background-color: var(--surface) !important;
+    border: 0 !important;
+    border-radius: 0.25rem;
+    overflow: clip;
+}
+
+.popover-region-header-container {
+    border: 0 !important;
+    background-color: var(--surfaceVariant) !important;
+    color: var(--onSurfaceVariant) !important;
+}
+
+.popover-region-footer-container {
+    border: 0 !important;
+    background-color: var(--surfaceVariant) !important;
+    color: var(--onSurfaceVariant) !important;
 }
 
 #page-footer {
