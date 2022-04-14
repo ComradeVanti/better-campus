@@ -4,6 +4,7 @@
     --background: #242424 !important;
     --surface: #363636 !important;
     --onSurface: #eeeeee !important;
+    --onSurfaceMuted: #bdbdbd !important;
     --surfaceVariant: #25282a !important;
     --onSurfaceVariant: #eeeeee !important;
     --primary: #448aff !important;
@@ -133,6 +134,10 @@ input[type=text]:focus, input[type=number]:focus, input[type=password]:focus {
     border: 0 !important;
     background-color: var(--surfaceVariant) !important;
     color: var(--onSurfaceVariant) !important;
+}
+
+.text-muted {
+    color: var(--onSurfaceMuted) !important;
 }
 
 #page-footer {
