@@ -2,6 +2,10 @@
 
 ## 2.0.0
 
+### Added
+
+- Toggle for dark-mode
+
 ## 1.0.0
 
 ### Added

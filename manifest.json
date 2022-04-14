@@ -19,19 +19,21 @@
       ],
       "js": [
         "src/base.js"
-      ],
-      "css": [
-        "src/base.css"
       ]
     }
   ],
   "action": {
     "default_popup": "src/popup.html"
   },
+  "permissions": [
+    "storage",
+    "tabs"
+  ],
   "web_accessible_resources": [
     {
       "resources": [
-        "logo.png"
+        "logo.png",
+        "src/base.css"
       ],
       "matches": [
         "https://ecampus.fhstp.ac.at/*"

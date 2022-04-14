@@ -6,6 +6,11 @@ function injectCSS(url) {
     document.getElementsByTagName("head")[0].appendChild(link);
 }
 
+function enableDarkMode() {
+    const cssUrl = chrome.runtime.getURL("src/base.css");
+    injectCSS(cssUrl)
+}
+
 function replaceTitle() {
     const emojis = [
         ":)", "UwU", "OwO", "<3", ":P", ":3", ":*"
@@ -74,6 +79,15 @@ function replaceIcons() {
         })
 }
 
-replaceTitle()
-replaceLogo()
-replaceIcons()
+(async function init() {
+    const darkModeEnabled = (await chrome.storage.sync.get("darkMode")).darkMode
+    if (darkModeEnabled)
+        enableDarkMode()
+
+
+    replaceTitle()
+    replaceLogo()
+    replaceIcons()
+}())
+
+
