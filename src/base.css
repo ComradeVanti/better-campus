@@ -136,6 +136,21 @@ input[type=text]:focus, input[type=number]:focus, input[type=password]:focus {
     color: var(--onSurfaceVariant) !important;
 }
 
+.message-app {
+    background-color: var(--surface) !important;
+}
+
+.input-group-text {
+    background-color: var(--primary) !important;
+    color: var(--onPrimary) !important;
+    border: 0 !important;
+}
+
+.list-group-item {
+    background-color: var(--surfaceVariant) !important;
+    color: var(--onSurfaceVariant) !important;
+}
+
 .text-muted {
     color: var(--onSurfaceMuted) !important;
 }

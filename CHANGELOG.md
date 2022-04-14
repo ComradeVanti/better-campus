@@ -5,7 +5,9 @@
 ### Added
 
 - Toggle for dark-mode
-- Missing dark-mode for notifications popup
+- Missing dark-mode for 
+  - notifications popup
+  - messages popup
 - Custom color for muted texts
 
 ## 1.0.0
