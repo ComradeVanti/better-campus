@@ -1,2 +1,8 @@
 :root {
+    --col-background: #101010;
+    --col-surface: #383838;
+    --col-on-surface: #e1e1e1;
+    --col-surface-var: #26262d;
+    --col-on-surface-var: #e1e1e1;
+    --col-shadow: #000000;
 }
