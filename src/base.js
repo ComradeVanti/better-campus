@@ -6,10 +6,29 @@ function injectCSS(url) {
     document.getElementsByTagName("head")[0].appendChild(link);
 }
 
-function enableDarkMode() {
-    const cssUrl = chrome.runtime.getURL("src/base.css");
-    injectCSS(cssUrl)
+function injectCSSFile(filePath) {
+    const url = chrome.runtime.getURL(`src/${filePath}`)
+    injectCSS(url)
 }
+
+async function replaceCSS() {
+
+    // Remove old CSS
+
+    Array.from(document.styleSheets)
+        .forEach(it => it.disabled = true)
+
+    // Add base style-sheet
+
+    injectCSSFile("style.css")
+
+    // Manage theme
+
+    const darkModeEnabled = (await chrome.storage.sync.get("darkMode")).darkMode
+
+    injectCSSFile(darkModeEnabled ? "dark.css" : "light.css")
+}
+
 
 function replaceTitle() {
     const emojis = [
@@ -80,11 +99,7 @@ function replaceIcons() {
 }
 
 (async function init() {
-    const darkModeEnabled = (await chrome.storage.sync.get("darkMode")).darkMode
-    if (darkModeEnabled)
-        enableDarkMode()
-
-
+    await replaceCSS()
     replaceTitle()
     replaceLogo()
     replaceIcons()
