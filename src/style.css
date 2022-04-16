@@ -208,6 +208,30 @@ a:hover {
     box-sizing: border-box;
 }
 
+.accesshide {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0
+}
+
+.alert {
+    position: relative;
+    padding: var(--spc-small) var(--spc-regular);
+    margin-bottom: var(--spc-regular);
+    border-radius: var(--spc-small)
+}
+
+.alert-danger {
+    color: var(--col-on-error);
+    background-color: var(--col-error);
+}
+
 .container, .container-fluid, .container-sm, .container-md, .container-lg, .container-xl {
     width: 100%;
     box-sizing: border-box;
