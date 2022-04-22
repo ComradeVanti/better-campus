@@ -24,6 +24,13 @@ async function simplifyHtml() {
     const url = getUrl(`src/${getPageDirectoryPath()}simplify.js`)
     const {default: config} = await import(url)
 
+    // Remove classes
+
+    Object.entries(config.removeClass).forEach(([selector, removeClasses]) => {
+        Array.from(document.querySelectorAll(selector))
+            .forEach(element => removeClasses.forEach(removeClass => element.classList.remove(removeClass)))
+    })
+
 }
 
 async function replaceCSS() {
