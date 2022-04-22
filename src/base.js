@@ -24,7 +24,8 @@ const processHtml = rawHtml =>
 const tryReplaceHtml = async () => {
     const rawHtml = await tryGetPageHtml()
     if (rawHtml != null) {
-        document.documentElement.innerHTML = processHtml(rawHtml)
+        document.write(processHtml(rawHtml))
+        document.close()
     }
 };
 
