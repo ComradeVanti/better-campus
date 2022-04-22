@@ -24,6 +24,16 @@ async function simplifyHtml() {
     const url = getUrl(`src/${getPageDirectoryPath()}simplify.js`)
     const {default: config} = await import(url)
 
+    // Delete elements
+
+    config.deleteElement.forEach(selector => {
+        Array.from(document.querySelectorAll(selector))
+            .forEach(element => {
+                const parent = element.parentNode
+                parent.removeChild(element)
+            })
+    })
+
     // Merge elements
 
     config.mergeElement.forEach(selector => {
