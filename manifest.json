@@ -33,9 +33,7 @@
     {
       "resources": [
         "logo.png",
-        "src/style.css",
-        "src/light.css",
-        "src/dark.css"
+        "src/*"
       ],
       "matches": [
         "https://ecampus.fhstp.ac.at/*"

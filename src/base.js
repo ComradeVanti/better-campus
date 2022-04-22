@@ -6,9 +6,24 @@ function injectCSS(url) {
     document.getElementsByTagName("head")[0].appendChild(link);
 }
 
+function getUrl(filePath) {
+    return chrome.runtime.getURL(`${filePath}`)
+}
+
 function injectCSSFile(filePath) {
-    const url = chrome.runtime.getURL(`src/${filePath}`)
+    const url = getUrl(filePath)
     injectCSS(url)
+}
+
+function getPageDirectoryPath() {
+    const path = window.location.pathname;
+    return path.substring(0, path.lastIndexOf("/") + 1)
+}
+
+async function simplifyHtml() {
+    const url = getUrl(`src/${getPageDirectoryPath()}simplify.js`)
+    const {default: config} = await import(url)
+
 }
 
 async function replaceCSS() {
@@ -20,15 +35,14 @@ async function replaceCSS() {
 
     // Add base style-sheet
 
-    injectCSSFile("style.css")
+    injectCSSFile("src/style.css")
 
     // Manage theme
 
     const darkModeEnabled = (await chrome.storage.sync.get("darkMode")).darkMode
 
-    injectCSSFile(darkModeEnabled ? "dark.css" : "light.css")
+    injectCSSFile(darkModeEnabled ? "src/dark.css" : "src/light.css")
 }
-
 
 function replaceTitle() {
     const emojis = [
@@ -41,7 +55,7 @@ function replaceTitle() {
 }
 
 function replaceLogo() {
-    const logoUrl = chrome.runtime.getURL("logo.png");
+    const logoUrl = getUrl("logo.png");
 
     Array.from(document.querySelectorAll("img"))
         .filter(it => it.src.includes("ecampus_Header"))
@@ -99,6 +113,7 @@ function replaceIcons() {
 }
 
 (async function init() {
+    await simplifyHtml()
     await replaceCSS()
     replaceTitle()
     replaceLogo()
