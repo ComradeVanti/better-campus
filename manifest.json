@@ -19,7 +19,8 @@
       ],
       "js": [
         "src/base.js"
-      ]
+      ],
+      "run_at": "document_start"
     }
   ],
   "action": {
@@ -32,8 +33,7 @@
   "web_accessible_resources": [
     {
       "resources": [
-        "logo.png",
-        "src/*"
+        "files/*"
       ],
       "matches": [
         "https://ecampus.fhstp.ac.at/*"
