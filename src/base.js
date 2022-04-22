@@ -24,11 +24,30 @@ async function simplifyHtml() {
     const url = getUrl(`src/${getPageDirectoryPath()}simplify.js`)
     const {default: config} = await import(url)
 
+    // Merge elements
+
+    config.mergeElement.forEach(selector => {
+        Array.from(document.querySelectorAll(selector))
+            .forEach(element => {
+                const parent = element.parentNode
+                Array.from(element.children)
+                    .forEach(child => parent.appendChild(child))
+                parent.removeChild(element)
+            })
+    })
+
     // Remove classes
 
-    Object.entries(config.removeClass).forEach(([selector, removeClasses]) => {
+    Object.entries(config.removeClass).forEach(([selector, clasNames]) => {
         Array.from(document.querySelectorAll(selector))
-            .forEach(element => removeClasses.forEach(removeClass => element.classList.remove(removeClass)))
+            .forEach(element => clasNames.forEach(className => element.classList.remove(className)))
+    })
+
+    // Add classes
+
+    Object.entries(config.addClass).forEach(([selector, clasNames]) => {
+        Array.from(document.querySelectorAll(selector))
+            .forEach(element => clasNames.forEach(className => element.classList.add(className)))
     })
 
 }
