@@ -1,4 +1,5 @@
-const getUrl = filePath => chrome.runtime.getURL(`${filePath}`);
+const getUrl = filePath =>
+    chrome.runtime.getURL(`${filePath}`);
 
 const tryGetPagePath = () => {
     const urlPath = window.location.pathname
@@ -14,16 +15,18 @@ const tryGetPageHtml = () => {
         .catch(_ => null);
 };
 
-const processHtml = rawHtml =>
-    rawHtml.replaceAll(/\[ext\][^\"]*/gm,
-                       match => getUrl(`files${match.substring(5)}`));
+const replacePlaceholder = placeholder =>
+    getUrl(`files${placeholder.substring(5)}`)
 
-async function tryReplaceHtml() {
+const processHtml = rawHtml =>
+    rawHtml.replaceAll(/\[ext\][^\"]*/gm, replacePlaceholder);
+
+const tryReplaceHtml = async () => {
     const rawHtml = await tryGetPageHtml()
     if (rawHtml != null) {
         document.documentElement.innerHTML = processHtml(rawHtml)
     }
-}
+};
 
 (async function init() {
     await tryReplaceHtml()
