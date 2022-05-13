@@ -1,3 +1,7 @@
+:root {
+    --fnt-logo: 3em;
+}
+
 #page-content {
     width: 50vw;
     height: 100vh;
@@ -8,5 +12,5 @@
 }
 
 #logo {
-    font-size: var(--fnt-lrg);
+    font-size: var(--fnt-logo);
 }
