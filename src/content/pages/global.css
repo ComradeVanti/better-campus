@@ -22,6 +22,8 @@
     /* Colors */
 
     --clr-on-surface: white;
+    --clr-primary: #1f4c94;
+    --clr-on-primary: white;
 }
 
 * {
@@ -37,6 +39,16 @@ body, .bg {
 
 body {
     overflow: auto hidden;
+}
+
+button {
+    box-shadow: var(--sdw-rgl);
+    border-radius: var(--sze-sml);
+    border: 0;
+    background-color: var(--clr-primary);
+    color: var(--clr-on-primary);
+    padding: var(--sze-sml) var(--sze-rgl);
+    cursor: pointer;
 }
 
 .transparent-card {
