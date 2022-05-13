@@ -25,7 +25,9 @@ const getUrl = filePath =>
  */
 const tryGetDirectoryPath = () => {
     const urlPath = window.location.pathname
-    const directoryPath = urlPath.substring(0, urlPath.lastIndexOf("/") + 1)
+    let directoryPath = urlPath.substring(0, urlPath.lastIndexOf("/") + 1)
+    if (directoryPath === "/")
+        directoryPath = "/home/"
     return `/files/pages${directoryPath}`
 }
 
