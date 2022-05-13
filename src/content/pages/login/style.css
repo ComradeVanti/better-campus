@@ -23,6 +23,7 @@ form {
 
 #page-content {
     width: 50vw;
+    max-width: 600px;
     height: 100vh;
     margin: var(--sze-lrg);
     display: flex;
