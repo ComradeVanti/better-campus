@@ -42,7 +42,7 @@ body {
 .transparent-card {
     box-shadow: var(--sdw-rgl);
     border-radius: var(--sze-sml);
-    background-color: rgba(17, 54, 61, 0.2);
+    background-color: rgba(8, 32, 35, 0.4);
     padding: var(--sze-rgl);
     color: var(--clr-on-surface);
 }
