@@ -33,7 +33,7 @@
   "web_accessible_resources": [
     {
       "resources": [
-        "files/*"
+        "src/content/*"
       ],
       "matches": [
         "https://ecampus.fhstp.ac.at/*"

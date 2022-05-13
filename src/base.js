@@ -21,6 +21,13 @@ const getUrl = filePath =>
     chrome.runtime.getURL(`${filePath}`);
 
 /**
+ * @param {string} filePath
+ * @return {string}
+ */
+const getContentUrl = filePath =>
+    getUrl(`/src/content/${filePath}`)
+
+/**
  * @return {string}
  */
 const tryGetDirectoryPath = () => {
@@ -28,7 +35,7 @@ const tryGetDirectoryPath = () => {
     let directoryPath = urlPath.substring(0, urlPath.lastIndexOf("/") + 1)
     if (directoryPath === "/")
         directoryPath = "/home/"
-    return `/files/pages${directoryPath}`
+    return `pages${directoryPath}`
 }
 
 /**
@@ -48,7 +55,7 @@ const getMoveScriptPath = () =>
  */
 const tryGetPageHtml = () => {
     const path = tryGetPagePath()
-    const url = getUrl(path)
+    const url = getContentUrl(path)
     return fetch(url)
         .then(r => r.text())
         .catch(_ => null);
@@ -59,7 +66,7 @@ const tryGetPageHtml = () => {
  * @return {string}
  */
 const replacePlaceholder = placeholder =>
-    getUrl(`files${placeholder.substring(5)}`)
+    getContentUrl(`${placeholder.substring(5)}`)
 
 /**
  * @param {html} rawHtml
@@ -73,7 +80,7 @@ const processHtml = rawHtml =>
  */
 const tryGetMoveFunctions = () => {
     const path = getMoveScriptPath()
-    const url = getUrl(path)
+    const url = getContentUrl(path)
     return import(url)
         .then(m => ({extract: m.extract, inject: m.inject}))
         .catch(_ => noMoving)
