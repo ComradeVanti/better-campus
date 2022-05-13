@@ -101,7 +101,9 @@ async function tryReplaceHtml() {
         document.replaceChild(newDoc.documentElement, document.documentElement)
 
         runScripts()
-    }
+    }else
+        document.documentElement.style.display = "block"
+
 }
 
 document.documentElement.style.display = "none"
