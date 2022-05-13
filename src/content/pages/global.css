@@ -7,6 +7,10 @@
     --sze-rgl: 20px;
     --sze-lrg: 40px;
 
+    /* Font-sizes */
+
+    --fnt-lrg: 2em;
+
     /* Shadows */
 
     --sdw-rgl: 0 0 5px 1px #111111;

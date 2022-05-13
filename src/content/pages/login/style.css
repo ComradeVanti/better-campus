@@ -3,3 +3,7 @@
     height: 100vh;
     margin: var(--sze-lrg)
 }
+
+#logo {
+    font-size: var(--fnt-lrg);
+}
