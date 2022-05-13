@@ -2,6 +2,15 @@
     --fnt-logo: 3rem;
 }
 
+input {
+    background-color: transparent;
+    border-radius: var(--sze-sml);
+    padding: 0 var(--sze-sml);
+    border: white 2px solid;
+    color: var(--clr-on-surface);
+    outline: none !important;
+}
+
 form {
     display: flex;
     flex-direction: column;
