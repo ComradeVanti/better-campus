@@ -1,9 +1,15 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato&display=swap');
+
 :root {
     /* Sizes */
 
     --sze-sml: 10px;
     --sze-rgl: 20px;
     --sze-lrg: 40px;
+}
+
+* {
+    font-family: 'Lato', sans-serif;
 }
 
 body, .bg {
