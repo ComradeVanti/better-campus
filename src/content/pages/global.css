@@ -1,4 +1,24 @@
+:root {
+    /* Sizes */
+
+    --sze-sml: 10px;
+    --sze-rgl: 20px;
+    --sze-lrg: 40px;
+}
+
 body, .bg {
     background-image: url("../bg.jpg");
     background-size: cover;
+}
+
+body {
+    overflow: auto hidden;
+}
+
+.transparent-card {
+    box-shadow: 0 0 5px 1px #111111;
+    border-radius: 10px;
+    background-color: rgba(0, 0, 0, 0.2);
+    padding: var(--sze-rgl);
+    color: white;
 }
