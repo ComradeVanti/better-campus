@@ -1,6 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Lato&display=swap');
 
 :root {
+
+    font-size: 20px;
+
     /* Sizes */
 
     --sze-sml: 10px;
@@ -9,7 +12,8 @@
 
     /* Font-sizes */
 
-    --fnt-lrg: 2em;
+    --fnt-rgl: 1rem;
+    --fnt-lrg: 2rem;
 
     /* Shadows */
 
@@ -22,12 +26,13 @@
 
 * {
     font-family: 'Lato', sans-serif;
+    font-size: var(--fnt-rgl);
 }
 
 body, .bg {
     background-image: url("../bg.jpg");
     background-size: cover;
-    background-position:center;
+    background-position: center;
 }
 
 body {
