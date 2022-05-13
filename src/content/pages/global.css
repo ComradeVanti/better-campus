@@ -6,6 +6,14 @@
     --sze-sml: 10px;
     --sze-rgl: 20px;
     --sze-lrg: 40px;
+
+    /* Shadows */
+
+    --sdw-rgl: 0 0 5px 1px #111111;
+
+    /* Colors */
+
+    --clr-on-surface: white;
 }
 
 * {
@@ -22,9 +30,9 @@ body {
 }
 
 .transparent-card {
-    box-shadow: 0 0 5px 1px #111111;
-    border-radius: 10px;
+    box-shadow: var(--sdw-rgl);
+    border-radius: var(--sze-sml);
     background-color: rgba(0, 0, 0, 0.2);
     padding: var(--sze-rgl);
-    color: white;
+    color: var(--clr-on-surface);
 }
