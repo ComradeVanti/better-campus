@@ -1,7 +1,10 @@
 #page-content {
     width: 50vw;
     height: 100vh;
-    margin: var(--sze-lrg)
+    margin: var(--sze-lrg);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 
 #logo {
