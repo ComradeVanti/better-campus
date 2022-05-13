@@ -1,9 +1,11 @@
 import * as Semester from "../../Semester.js";
 import * as Course from "../../Course.js";
+import * as SessKey from "../../SessKey.js";
 
 /**
  * @typedef {Object} Data
  * @property {Semester[]} semesters
+ * @property {SessKey} sessKey
  */
 
 /**
@@ -85,13 +87,18 @@ function makeSemesterDisplay(doc, semester) {
  */
 export const extract = (doc) => {
 
-    const categoryElements = doc.querySelectorAll("li[aria-labelledby='label_2_68']>ul>li")
+    // Extract semesters
 
-    const semesters = Array.from(categoryElements)
+    const semesterElements = doc.querySelectorAll("li[aria-labelledby='label_2_68']>ul>li")
+
+    const semesters = Array.from(semesterElements)
         .map(tryExtractSemester)
         .filter(semester => semester != null)
 
-    return {semesters}
+    // Extract sessKey
+
+    const sessKey = SessKey.tryFindIn(doc) || ""
+    return {semesters, sessKey}
 }
 
 /**
@@ -100,10 +107,17 @@ export const extract = (doc) => {
  */
 export const inject = (doc, data) => {
 
+    // Inject semesters
+
     const semestersContainer = doc.querySelector("#semesters")
 
     data.semesters
         .map(semester => makeSemesterDisplay(doc, semester))
         .forEach(display => semestersContainer.appendChild(display))
+
+    // Inject sessKey
+
+    const logoutLink = doc.querySelector("#logout")
+    logoutLink.href = logoutLink.href.replace("[sessKey]", data.sessKey)
 
 }
