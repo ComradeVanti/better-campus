@@ -1,0 +1,63 @@
+:root {
+    --sze-course: 150px;
+}
+
+#semesters {
+    width: 60%;
+    min-width: 600px;
+    display: flex;
+    flex-direction: column;
+    overflow: auto;
+    padding: var(--sze-rgl);
+}
+
+.semester {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: var(--sze-rgl);
+}
+
+.semester-name {
+    font-size: var(--fnt-lrg);
+    margin-bottom: var(--sze-rgl);
+}
+
+.courses {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: var(--sze-rgl);
+}
+
+.course {
+    width: var(--sze-course);
+    height: var(--sze-course);
+}
+
+.course-link {
+    display: block;
+    position: relative;
+    height: 100%;
+    width: 100%;
+    color: var(--clr-on-surface);
+    text-decoration: none;
+    border: 2px white solid;
+    padding: var(--sze-rgl);
+    border-radius: var(--sze-sml);
+    box-sizing: border-box;
+}
+
+.course-name {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.course-type {
+    position: absolute;
+    right: var(--sze-rgl);
+    bottom: var(--sze-rgl);
+    font-size: var(--fnt-sml);
+}

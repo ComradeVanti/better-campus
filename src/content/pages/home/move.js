@@ -1,6 +1,7 @@
 import * as Semester from "../../Semester.js";
 import * as Course from "../../Course.js";
 import * as SessKey from "../../SessKey.js";
+import * as HTML from "../../HTML.js";
 
 /**
  * @typedef {Object} Data
@@ -58,11 +59,15 @@ function tryExtractSemester(semesterRoot) {
  * @return {HTMLElement}
  */
 function makeCourseDisplay(doc, course) {
-    const element = doc.createElement("a")
-    element.className = "course"
-    element.innerText = Course.nameOf(course)
-    element.href = `https://ecampus.fhstp.ac.at/course/view.php?id=${course.id}`
-    return element
+
+    const html = "<div class=\'course\'>\n    <a class=\'course-link\' href=\'https://ecampus.fhstp.ac.at/course/view.php?id=[id]\'>\n        <span class=\'course-name\'>[name]</span>\n        <span class=\'course-type\'>[type]</span>\n    </a>\n</div>"
+    const insertedHtml = HTML.replacePlaceholders(html, [
+        ["name", Course.nameOf(course)],
+        ["type", Course.typeOf(course)],
+        ["id", course.id],
+    ])
+
+    return HTML.makeElementFrom(doc, insertedHtml)
 }
 
 /**
@@ -71,14 +76,23 @@ function makeCourseDisplay(doc, course) {
  * @return {HTMLElement}
  */
 function makeSemesterDisplay(doc, semester) {
-    const element = doc.createElement("div")
-    element.className = "semester"
-    element.innerText = Semester.nameOf(semester)
-    semester.courses
-        .map(course => makeCourseDisplay(doc, course))
-        .forEach(display => element.appendChild(display))
 
-    return element
+    const makeCourseHTML = course => `<div class='course'>
+    <a class='course-link' href='https://ecampus.fhstp.ac.at/course/view.php?id=${course.id}'>
+        <span class='course-name'>${Course.nameOf(course)}</span>
+        <span class='course-type'>${Course.typeOf(course)}</span>
+    </a>
+</div>`;
+
+    const makeSemesterHTML = semester => {
+        const coursesHTML = semester.courses.map(makeCourseHTML).join("\n")
+        return `<div class="semester transparent-card">
+    <span class="semester-name">${Semester.nameOf(semester)}</span>
+    <div class="courses">${coursesHTML}</div>
+</div>`;
+    }
+
+    return HTML.makeElementFrom(doc, makeSemesterHTML(semester))
 }
 
 /**
