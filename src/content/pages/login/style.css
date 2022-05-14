@@ -22,10 +22,10 @@ form {
 }
 
 #page-content {
-    width: 50vw;
+    width: 50%;
+    height: 100%;
     max-width: 600px;
-    height: 100vh;
-    margin: var(--sze-lrg);
+    padding: var(--sze-lrg);
     display: flex;
     flex-direction: column;
     justify-content: center;
