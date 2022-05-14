@@ -3,22 +3,26 @@
 }
 
 input {
-    background-color: transparent;
-    border-radius: var(--sze-sml);
+    background-color: var(--clr-surface);
+    color: var(--clr-on-surface);
+    border-radius: var(--sze-rgl);
+    box-shadow: var(--sdw-rgl);
     padding: 0 var(--sze-sml);
     border: white 2px solid;
-    color: var(--clr-on-surface);
     outline: none !important;
     box-sizing: border-box;
 }
 
 form {
-    margin-top: var(--sze-rgl);
     display: grid;
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    grid-template-rows: auto auto auto;
+    grid-template-columns: repeat(2, minmax(0, 1fr)) auto;
+    grid-template-rows: auto auto;
     row-gap: var(--sze-sml);
     column-gap: var(--sze-rgl);
+}
+
+.card * {
+    color: var(--clr-on-surface);
 }
 
 #page-content {
@@ -28,12 +32,12 @@ form {
     padding: var(--sze-lrg);
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: start;
 }
 
 #logo {
     font-size: var(--fnt-logo);
-    margin-bottom: var(--sze-lrg);
+    margin-bottom: var(--sze-rgl);
 }
 
 #username-label {
@@ -53,6 +57,5 @@ form {
 }
 
 #login-btn {
-    margin-top: var(--sze-rgl);
-    grid-area: 3 / 1 / 4 / 3;
+    grid-area: 2 / 3 / 3 / 4;
 }

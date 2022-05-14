@@ -36,7 +36,14 @@
 
 .course {
     width: var(--sze-course);
-    height: var(--sze-course);
+    height: calc(var(--sze-course) * 0.75);
+    background-color: var(--clr-primary);
+    border-radius: var(--sze-sml);
+    box-shadow: var(--sdw-rgl);
+}
+
+.course * {
+    color: var(--clr-on-primary)
 }
 
 .course-link {
@@ -44,11 +51,8 @@
     position: relative;
     height: 100%;
     width: 100%;
-    color: var(--clr-on-surface);
     text-decoration: none;
-    border: 2px white solid;
     padding: var(--sze-rgl);
-    border-radius: var(--sze-sml);
     box-sizing: border-box;
 }
 

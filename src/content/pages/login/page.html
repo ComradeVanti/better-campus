@@ -7,20 +7,19 @@
     <link rel="stylesheet" href="[ext]/pages/login/style.css">
     <script src="[ext]/pages/global.js"></script>
     <script src="[ext]/pages/login/script.js"></script>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 </head>
 <body>
 <div id="page-content">
-    <div class="transparent-card">
-        <span id="logo">✨eCampus✨</span>
-        <form method="post">
-            <input type="hidden" name="logintoken" id="login-token">
-            <label for="username-input" id="username-label">Ich bin</label>
-            <input type="text" name="username" id="username-input">
-            <label for="password-input" id="password-label">und mein Passwort ist</label>
-            <input type="password" name="password" id="password-input">
-            <button type="submit" id="login-btn">Lass mich rein</button>
-        </form>
-    </div>
+    <span id="logo">✨eCampus✨</span>
+    <form method="post">
+        <input type="hidden" name="logintoken" id="login-token">
+        <label for="username-input" id="username-label">Ich bin</label>
+        <input type="text" name="username" id="username-input">
+        <label for="password-input" id="password-label">und mein Passwort ist</label>
+        <input type="password" name="password" id="password-input">
+        <button class="material-icons" type="submit" id="login-btn">lock_open</button>
+    </form>
 </div>
 <div class="plug">Made with hate by <a href="https://github.com/ComradeVanti" target="_blank">Ramon</a> ❤️</div>
 </body>
