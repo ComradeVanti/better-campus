@@ -30,6 +30,7 @@
 * {
     font-family: 'Lato', sans-serif;
     font-size: var(--fnt-rgl);
+    color: var(--clr-on-surface);
 }
 
 body, .bg {
