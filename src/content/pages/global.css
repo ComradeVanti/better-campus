@@ -63,3 +63,16 @@ button {
     padding: var(--sze-rgl);
     color: var(--clr-on-surface);
 }
+
+.plug {
+    position: fixed;
+    right: var(--sze-rgl);
+    bottom: var(--sze-rgl);
+    font-size: var(--fnt-sml);
+}
+
+.plug a {
+    color: var(--clr-on-surface);
+    text-decoration: none;
+    font-size: var(--fnt-sml);
+}
