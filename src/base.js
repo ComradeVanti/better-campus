@@ -92,7 +92,6 @@ async function tryReplaceHtml() {
         Array.from(document.scripts).forEach(run)
     }
 
-    document.documentElement.style.display = "none"
     const rawHtml = await tryGetPageHtml()
     if (rawHtml != null) {
         const {extract, inject} = await tryGetMoveFunctions()
@@ -110,6 +109,7 @@ async function tryReplaceHtml() {
 
 }
 
+document.documentElement.style.display = "none"
 window.addEventListener("load", async function (event) {
     event.stopImmediatePropagation();
     await tryReplaceHtml()
