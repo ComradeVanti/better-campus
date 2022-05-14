@@ -54,7 +54,7 @@ button {
 .transparent-card {
     box-shadow: var(--sdw-rgl);
     border-radius: var(--sze-sml);
-    background-color: rgba(8, 32, 35, 0.4);
+    background-color: rgba(8, 32, 35, 0.6);
     padding: var(--sze-rgl);
     color: var(--clr-on-surface);
 }
