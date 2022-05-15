@@ -1,5 +1,8 @@
 :root {
-    --sze-course: 150px;
+    --sze-course-width: 150px;
+    --sze-course-height: 100px;
+    --sze-course-width-sml: 100px;
+    --sze-course-height-sml: 50px;
 }
 
 #logo {
@@ -23,8 +26,11 @@
 }
 
 .semester-name {
-    font-size: var(--fnt-lrg);
     margin-bottom: var(--sze-rgl);
+}
+
+.current .semester-name {
+    font-size: var(--fnt-lrg);
 }
 
 .courses {
@@ -35,11 +41,16 @@
 }
 
 .course {
-    width: var(--sze-course);
-    height: calc(var(--sze-course) * 0.75);
+    width: var(--sze-course-width-sml);
+    height: var(--sze-course-height-sml);
     background-color: var(--clr-primary);
     border-radius: var(--sze-sml);
     box-shadow: var(--sdw-rgl);
+}
+
+.current.semester .course {
+    width: var(--sze-course-width);
+    height: var(--sze-course-height);
 }
 
 .course * {
@@ -62,6 +73,11 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    font-size: var(--fnt-sml);
+}
+
+.current.semester .course-name {
+    font-size: var(--fnt-rgl);
 }
 
 .course-type {
@@ -69,4 +85,9 @@
     right: var(--sze-rgl);
     bottom: var(--sze-rgl);
     font-size: var(--fnt-sml);
+    display: none;
+}
+
+.current.semester .course-type {
+    display: inline-block;
 }

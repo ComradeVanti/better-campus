@@ -86,7 +86,7 @@ function makeSemesterDisplay(doc, semester) {
 
     const makeSemesterHTML = semester => {
         const coursesHTML = semester.courses.map(makeCourseHTML).join("\n")
-        return `<div class="semester">
+        return `<div class="semester${Semester.isCurrent(semester) ? ' current' : ''}">
     <span class="semester-name">${Semester.nameOf(semester)}</span>
     <div class="courses">${coursesHTML}</div>
 </div>`;
