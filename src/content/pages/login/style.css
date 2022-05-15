@@ -6,6 +6,7 @@ body {
     background-image: url("../../bg.png");
     background-size: cover;
     background-position: center;
+    color: white;
 }
 
 input {
