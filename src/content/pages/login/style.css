@@ -27,10 +27,6 @@ form {
     column-gap: var(--sze-rgl);
 }
 
-.card * {
-    color: var(--clr-on-surface);
-}
-
 #page-content {
     width: 50%;
     height: 100%;
