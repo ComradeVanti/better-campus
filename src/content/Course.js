@@ -8,7 +8,7 @@
  * @property {number} id
  */
 
-const courseRegex = /^(?<name>[^ ]+) (?<type>[^ -]+)?[ -]*([a-z]{3}\d{2} ?)*$/
+const courseRegex = /(?<name>\w+(?:-\d+)?) (?:(?<type>\w+)|[^ ]* ).*$/
 
 /**
  * @param {Course} course
