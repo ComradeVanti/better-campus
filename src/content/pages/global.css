@@ -9,6 +9,7 @@
     --sze-sml: 10px;
     --sze-rgl: 20px;
     --sze-lrg: 40px;
+    --sze-top-bar: 50px;
 
     /* Font-sizes */
 
@@ -73,4 +74,21 @@ button {
 .plug a {
     text-decoration: none;
     font-size: var(--fnt-sml);
+}
+
+.top-bar {
+    position: fixed;
+    display: flex;
+    align-items: center;
+    box-sizing: border-box;
+    top: 0;
+    width: 100vw;
+    height: var(--sze-top-bar);
+    background-color: var(--clr-primary);
+    padding: var(--sze-sml) var(--sze-rgl);
+    box-shadow: var(--sdw-rgl);
+}
+
+.top-bar * {
+    color: var(--clr-on-primary);
 }
