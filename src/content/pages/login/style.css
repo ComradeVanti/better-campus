@@ -2,6 +2,12 @@
     --fnt-logo: 3rem;
 }
 
+body {
+    background-image: url("../../bg.png");
+    background-size: cover;
+    background-position: center;
+}
+
 input {
     background-color: var(--clr-surface);
     color: var(--clr-on-surface);

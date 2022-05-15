@@ -35,12 +35,6 @@
     color: var(--clr-on-background);
 }
 
-body, .bg {
-    background-image: url("../bg.png");
-    background-size: cover;
-    background-position: center;
-}
-
 body {
     width: 100vw;
     height: 100vh;
