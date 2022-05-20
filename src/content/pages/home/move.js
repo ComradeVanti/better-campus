@@ -103,7 +103,9 @@ export const extract = (doc) => {
 
     // Extract semesters
 
-    const semesterElements = doc.querySelectorAll("li[aria-labelledby='label_2_68']>ul>li")
+    const semesterElements =
+        doc.querySelectorAll(".block_navigation li.depth_2")[2]
+            .querySelectorAll("li.depth_3")
 
     const semesters = Array.from(semesterElements)
         .map(tryExtractSemester)
