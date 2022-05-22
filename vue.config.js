@@ -11,4 +11,5 @@ module.exports = defineConfig({
       return [options];
     });
   },
+  publicPath: "better/"
 });

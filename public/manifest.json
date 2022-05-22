@@ -19,14 +19,14 @@
       ]
     }
   ],
-  "action": {
-  },
-  "permissions": [
-  ],
   "web_accessible_resources": [
     {
-      "resources": [ "*" ],
-      "matches": [ "https://ecampus.fhstp.ac.at/*" ]
+      "resources": [
+        "*"
+      ],
+      "matches": [
+        "https://ecampus.fhstp.ac.at/*"
+      ]
     }
   ]
 }
