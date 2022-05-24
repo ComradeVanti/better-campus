@@ -8,7 +8,7 @@ export default {
       /**
        * @type {ScanData}
        */
-      scanData: { loginToken: "" },
+      scanData: {},
     };
   },
   mounted() {
@@ -19,4 +19,13 @@ export default {
 };
 </script>
 
-<style scoped></style>
+<style>
+@import "@/assets/global.css";
+
+body {
+  background-size: cover;
+  background-position: center;
+  color: white;
+}
+
+</style>
