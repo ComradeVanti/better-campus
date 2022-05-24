@@ -53,7 +53,6 @@ button {
     border: 0;
     background-color: var(--clr-primary);
     color: var(--clr-on-primary);
-    padding: var(--sze-sml) var(--sze-rgl);
     cursor: pointer;
 }
 

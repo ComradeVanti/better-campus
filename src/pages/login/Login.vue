@@ -15,9 +15,7 @@
           >and my password is</label
         >
         <input id="password-input" name="password" type="password" />
-        <button id="login-btn" class="material-icons" type="submit">
-          lock_open
-        </button>
+        <IconButton id="login-btn" icon="lock_open" type="submit"> </IconButton>
       </form>
     </div>
     <plug />
@@ -27,10 +25,11 @@
 <script>
 import Plug from "@/components/Plug";
 import Logo from "@/components/Logo";
+import IconButton from "@/components/IconButton";
 
 export default {
   name: "Login",
-  components: { Logo, Plug },
+  components: { IconButton, Logo, Plug },
   data() {
     return {
       /**
