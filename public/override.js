@@ -1,27 +1,25 @@
 const pageForPath = {
   "/": "home",
-  "/login/index.php": "login"
+  "/login/index.php": "login",
 };
 
 /**
  * @param {string} filePath
  * @return {url}
  */
-const getExtensionUrl = filePath =>
-  chrome.runtime.getURL(filePath);
+const getExtensionUrl = (filePath) => chrome.runtime.getURL(filePath);
 
 /**
  * @return {string|null}
  */
-const tryGetPageName = () =>
-  pageForPath[location.pathname] ?? null;
+const tryGetPageName = () => pageForPath[location.pathname] ?? null;
 
 /**
  * @param {string} pageName
  * @return {Promise<html>}
  */
 const getOverrideHtmlAsync = async (pageName) => {
-  return fetch(getExtensionUrl(`${pageName}.html`)).then(res => res.text());
+  return fetch(getExtensionUrl(`${pageName}.html`)).then((res) => res.text());
 };
 
 /**
@@ -40,11 +38,11 @@ const getOverrideDocAsync = async (pageName) => {
  */
 const getScannerAsync = (pageName) => {
   return import(getExtensionUrl(`scanners/${pageName}.js`))
-    .then(m => m.default);
+    .then((m) => m.default)
+    .catch(() => console.log(`No scanner for ${pageName}`));
 };
 
 const runScripts = () => {
-
   const run = (script) => {
     const newScript = document.createElement("script");
     newScript.src = script.src;
@@ -65,7 +63,9 @@ const runScripts = () => {
 
   const data = scanner(document);
   document.replaceChild(overrideDoc.documentElement, document.documentElement);
-  document.querySelector("#app").setAttribute("scan-data", JSON.stringify(data));
+  document
+    .querySelector("#app")
+    .setAttribute("scan-data", JSON.stringify(data));
 
   runScripts();
 })();
