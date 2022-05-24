@@ -4,6 +4,7 @@ module.exports = defineConfig({
   lintOnSave: false,
   pages: {
     login: "src/pages/login/main.js",
+    home: "src/pages/home/main.js",
   },
   chainWebpack: (config) => {
     config.plugin("copy").tap(([options]) => {
@@ -11,5 +12,5 @@ module.exports = defineConfig({
       return [options];
     });
   },
-  publicPath: "better/"
+  publicPath: "better/",
 });
