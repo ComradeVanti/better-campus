@@ -5,23 +5,37 @@
       <a href="https://cis.fhstp.ac.at">CIS</a>
       <a href="https://lv-evaluierung.fhstp.ac.at">LV-Eval</a>
       <a href="https://verleih.fhstp.ac.at">Verleih</a>
-      <a href="https://cis.fhstp.ac.at/_data/news/sodexo/menueplan_sodexo.pdf">Mensa</a>
+      <a href="https://cis.fhstp.ac.at/_data/news/sodexo/menueplan_sodexo.pdf"
+        >Mensa</a
+      >
     </div>
+    <IconButton icon="logout" @click="logout" />
   </nav>
 </template>
 
 <script>
 import Logo from "@/components/Logo";
+import IconButton from "@/components/IconButton";
 
 export default {
   name: "Navbar",
-  components: { Logo }
+  components: { IconButton, Logo },
+  props: {
+    sessKey: {
+      type: String,
+      required: true,
+    },
+  },
+  methods: {
+    logout() {
+      location.href = `https://ecampus.fhstp.ac.at/login/logout.php?sesskey=${this.sessKey}`;
+    },
+  },
 };
 </script>
 
 <style scoped>
 nav {
-  width: 100%;
   display: flex;
   align-items: end;
   padding: var(--sze-sml);
@@ -39,5 +53,4 @@ a {
   font-size: var(--fnt-sml);
   margin-right: var(--sze-rgl);
 }
-
 </style>

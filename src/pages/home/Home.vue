@@ -1,4 +1,4 @@
-<template><navbar></navbar></template>
+<template><navbar :sess-key="scanData.sessKey"></navbar></template>
 
 <script>
 import Navbar from "@/components/Navbar";
@@ -10,7 +10,9 @@ export default {
       /**
        * @type {ScanData}
        */
-      scanData: {},
+      scanData: {
+        sessKey: ""
+      },
     };
   },
   mounted() {
