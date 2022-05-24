@@ -3,14 +3,19 @@
     <div id="page-content">
       <logo id="logo" size="large" />
       <form method="post">
-        <input type="hidden" name="logintoken" id="login-token" />
-        <label for="username-input" id="username-label">I am</label>
-        <input type="text" name="username" id="username-input" />
-        <label for="password-input" id="password-label"
+        <input
+          id="login-token"
+          :value="scanData.loginToken"
+          name="logintoken"
+          type="hidden"
+        />
+        <label id="username-label" for="username-input">I am</label>
+        <input id="username-input" name="username" type="text" />
+        <label id="password-label" for="password-input"
           >and my password is</label
         >
-        <input type="password" name="password" id="password-input" />
-        <button class="material-icons" type="submit" id="login-btn">
+        <input id="password-input" name="password" type="password" />
+        <button id="login-btn" class="material-icons" type="submit">
           lock_open
         </button>
       </form>
@@ -28,7 +33,10 @@ export default {
   components: { Logo, Plug },
   data() {
     return {
-      scanData: Object,
+      /**
+       * @type {ScanData}
+       */
+      scanData: { loginToken: "" },
     };
   },
   mounted() {
