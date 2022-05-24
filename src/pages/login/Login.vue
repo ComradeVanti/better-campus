@@ -60,17 +60,6 @@ body {
   margin-bottom: var(--sze-rgl);
 }
 
-input {
-  background-color: var(--clr-surface);
-  color: var(--clr-on-surface);
-  border-radius: var(--sze-rgl);
-  box-shadow: var(--sdw-rgl);
-  padding: 0 var(--sze-sml);
-  border: white 2px solid;
-  outline: none !important;
-  box-sizing: border-box;
-}
-
 form {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr)) auto;
