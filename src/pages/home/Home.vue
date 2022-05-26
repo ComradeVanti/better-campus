@@ -1,17 +1,28 @@
-<template><navbar :sess-key="scanData.sessKey"></navbar></template>
+<template>
+  <div>
+    <navbar :sess-key="scanData.sessKey"></navbar>
+    <semester-block
+      v-for="semester in scanData.semesters"
+      :key="semester.name"
+      :semester="semester"
+    />
+  </div>
+</template>
 
 <script>
 import Navbar from "@/components/Navbar";
+import SemesterBlock from "@/components/SemesterBlock";
 export default {
   name: "Home",
-  components: { Navbar },
+  components: { SemesterBlock, Navbar },
   data() {
     return {
       /**
        * @type {ScanData}
        */
       scanData: {
-        sessKey: ""
+        sessKey: "",
+        semesters: [],
       },
     };
   },
@@ -31,5 +42,4 @@ body {
   background-position: center;
   color: white;
 }
-
 </style>
