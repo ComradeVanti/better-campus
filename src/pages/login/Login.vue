@@ -10,11 +10,11 @@
           type="hidden"
         />
         <label id="username-label" for="username-input">I am</label>
-        <input id="username-input" name="username" type="text" />
+        <text-box id="username-input" name="username" type="text" />
         <label id="password-label" for="password-input"
           >and my password is</label
         >
-        <input id="password-input" name="password" type="password" />
+        <text-box id="password-input" name="password" type="password" />
         <IconButton id="login-btn" icon="lock_open" type="submit"> </IconButton>
       </form>
     </div>
@@ -26,10 +26,11 @@
 import Plug from "@/components/Plug";
 import Logo from "@/components/Logo";
 import IconButton from "@/components/IconButton";
+import TextBox from "@/components/TextBox";
 
 export default {
   name: "Login",
-  components: { IconButton, Logo, Plug },
+  components: { TextBox, IconButton, Logo, Plug },
   data() {
     return {
       /**
