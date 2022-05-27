@@ -21,16 +21,18 @@
         />
       </div>
     </div>
+    <plug/>
   </div>
 </template>
 
 <script>
 import Navbar from "@/components/Navbar";
 import CourseBadge from "@/components/CourseBadge";
+import Plug from "@/components/Plug";
 
 export default {
   name: "Home",
-  components: { CourseBadge, Navbar },
+  components: { Plug, CourseBadge, Navbar },
   computed: {
     /**
      * @returns {Semester}
