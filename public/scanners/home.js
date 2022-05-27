@@ -13,17 +13,30 @@ function findSessKey(html) {
 }
 
 /**
+ * @param {string} s
+ * @param {string} search
+ * @return {string}
+ */
+function readAfter(s, search) {
+  const index = s.indexOf(search);
+  return s.substring(index + search.length);
+}
+
+/**
  * @param {HTMLElement} element
  * @return {Course}
  */
 function extractCourse(element) {
   const linkElement = element.querySelector("a");
+
   const info = linkElement.title;
   const match = courseInfoRegex.exec(info);
-  return {
-    name: match.groups.name,
-    lecturers: match.groups.lecturers.split(", "),
-  };
+  const name = match.groups.name;
+
+  const link = linkElement.href;
+  const id = parseInt(readAfter(link, "="));
+
+  return { name, id };
 }
 
 /**

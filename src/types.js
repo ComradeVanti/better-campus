@@ -7,9 +7,13 @@
  */
 
 /**
+ * @typedef {number} id
+ */
+
+/**
  * @typedef {Object} Course
  * @property {string} name
- * @property {string[]} lecturers
+ * @property {id} id
  */
 
 /**

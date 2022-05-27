@@ -1,12 +1,17 @@
 <template>
-  <div>
+  <a :href="courseLink">
     {{ course.name }}
-  </div>
+  </a>
 </template>
 
 <script>
 export default {
   name: "CourseBadge",
+  computed: {
+    courseLink(){
+      return `https://ecampus.fhstp.ac.at/course/view.php?id=${this.course.id}`
+    }
+  },
   props: {
     course: {
       type: Object,
@@ -17,7 +22,7 @@ export default {
 </script>
 
 <style scoped>
-div {
+a {
   background: var(--clr-surface);
   color: var(--clr-on-surface);
   border-radius: var(--sze-corner);
@@ -31,10 +36,11 @@ div {
   align-items: center;
   text-align: center;
   height: 75px;
+  text-decoration: none;
   transition: background-color 0.25s, color 0.25s;
 }
 
-div:hover {
+a:hover {
   background-color: var(--clr-primary);
   color: var(--clr-on-primary);
 }
