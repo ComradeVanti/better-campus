@@ -83,36 +83,38 @@ body {
 }
 
 #app {
-  height: 100%;
+  height: 100vh;
   display: flex;
   flex-direction: column;
 }
 
 .page {
+  padding-top: var(--sze-rgl);
   flex-grow: 1;
   display: flex;
-  margin-top: var(--sze-rgl);
   flex-direction: column;
-  align-items: stretch;
 }
 
 .page-content {
   flex-grow: 1;
   padding: var(--sze-rgl);
   display: flex;
-  flex-direction: column;
-  align-items: stretch;
+  flex-direction: row;
+  align-items: flex-start;
   gap: var(--sze-rgl);
+  margin-bottom: var(--sze-lrg);
 }
 
 .semester-nav {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   gap: var(--sze-sml);
   background-color: var(--clr-surface);
   border-radius: var(--sze-corner);
   padding: var(--sze-sml);
   box-shadow: var(--sdw-rgl);
+  min-width: 150px;
+  align-self: stretch;
 }
 
 .semester-button {
