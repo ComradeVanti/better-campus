@@ -1,6 +1,8 @@
 const sessKeyRegex = /(?<="sesskey":")[^"]+/;
 const semesterContainersSelector =
   ".block_navigation>.card-body>.card-text>ul>li>ul>li:nth-child(3)>ul>li:nth-child(n+3)";
+const courseInfoRegex =
+  /^[- ]*(?<name>.+) ((?<format>[A-Z]{2,3})|-).*\((?<lecturers>.*)\)/;
 
 /**
  * @param {html} html
@@ -16,7 +18,12 @@ function findSessKey(html) {
  */
 function extractCourse(element) {
   const linkElement = element.querySelector("a");
-  return { name: linkElement.innerText };
+  const info = linkElement.title;
+  const match = courseInfoRegex.exec(info);
+  return {
+    name: match.groups.name,
+    lecturers: match.groups.lecturers.split(", "),
+  };
 }
 
 /**

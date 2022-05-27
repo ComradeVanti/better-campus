@@ -15,16 +15,24 @@
           </button>
         </div>
       </div>
+      <div class="semester">
+        <course-badge
+          v-for="(course, index) in selectedSemester.courses"
+          :key="index"
+          :course="course"
+        />
+      </div>
     </div>
   </div>
 </template>
 
 <script>
 import Navbar from "@/components/Navbar";
+import CourseBadge from "@/components/CourseBadge";
 
 export default {
   name: "Home",
-  components: { Navbar },
+  components: { CourseBadge, Navbar },
   computed: {
     /**
      * @returns {Semester}
@@ -92,6 +100,7 @@ body {
   padding: var(--sze-rgl);
   display: flex;
   align-items: flex-start;
+  gap: var(--sze-rgl);
 }
 
 .semester-nav {
@@ -99,6 +108,7 @@ body {
   color: var(--clr-on-surface);
   border-radius: var(--sze-corner);
   padding: var(--sze-sml);
+  min-width: 200px;
 }
 
 .semester-select {
@@ -119,5 +129,15 @@ body {
 .selected-name {
   background-color: var(--clr-primary);
   color: var(--clr-on-primary);
+}
+
+.semester {
+  flex-grow: 1;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  align-items: stretch;
+  overflow-y: auto;
+  gap: var(--sze-sml);
 }
 </style>

@@ -9,6 +9,7 @@
 /**
  * @typedef {Object} Course
  * @property {string} name
+ * @property {string[]} lecturers
  */
 
 /**
