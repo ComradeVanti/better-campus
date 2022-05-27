@@ -38,7 +38,7 @@ export default {
 nav {
   display: flex;
   align-items: end;
-  padding: var(--sze-sml);
+  padding: var(--sze-sml) var(--sze-rgl);
 }
 
 .links {
