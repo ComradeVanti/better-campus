@@ -3,17 +3,15 @@
     <navbar :sess-key="scanData.sessKey"></navbar>
     <div class="page-content">
       <div class="semester-nav">
-        <div class="semester-select">
-          <button
-            v-for="(name, index) in semesterNames"
-            :key="index"
-            class="semester-button"
-            :class="{ 'selected-name': index === selectedSemesterIndex }"
-            @click="selectSemester(index)"
-          >
-            {{ name }}
-          </button>
-        </div>
+        <button
+          v-for="(name, index) in semesterNames"
+          :key="index"
+          :class="{ 'selected-name': index === selectedSemesterIndex }"
+          class="semester-button"
+          @click="selectSemester(index)"
+        >
+          {{ name }}
+        </button>
       </div>
       <div class="semester">
         <course-badge
@@ -86,35 +84,35 @@ body {
 
 #app {
   height: 100%;
+  display: flex;
+  flex-direction: column;
 }
 
 .page {
+  flex-grow: 1;
   display: flex;
+  margin-top: var(--sze-rgl);
   flex-direction: column;
   align-items: stretch;
-  height: 100%;
 }
 
 .page-content {
   flex-grow: 1;
   padding: var(--sze-rgl);
   display: flex;
-  align-items: flex-start;
+  flex-direction: column;
+  align-items: stretch;
   gap: var(--sze-rgl);
 }
 
 .semester-nav {
+  display: flex;
+  flex-direction: row;
+  gap: var(--sze-sml);
   background-color: var(--clr-surface);
-  color: var(--clr-on-surface);
   border-radius: var(--sze-corner);
   padding: var(--sze-sml);
-  min-width: 200px;
-}
-
-.semester-select {
-  display: flex;
-  flex-direction: column;
-  gap: var(--sze-sml);
+  box-shadow: var(--sdw-rgl);
 }
 
 .semester-button {
@@ -122,21 +120,27 @@ body {
   color: var(--clr-on-surface-alt);
   border-radius: var(--sze-corner);
   padding: var(--sze-sml);
+  font-size: var(--fnt-sml);
+  box-shadow: var(--sdw-rgl);
   cursor: pointer;
   border: 0;
+  transition: font-size 0.25s;
+}
+
+.semester-button:hover {
+  font-size: var(--fnt-lrg);
 }
 
 .selected-name {
   background-color: var(--clr-primary);
   color: var(--clr-on-primary);
+  font-size: var(--fnt-lrg);
 }
 
 .semester {
-  flex-grow: 1;
   display: flex;
   flex-wrap: wrap;
   flex-direction: row;
-  align-items: stretch;
   overflow-y: auto;
   gap: var(--sze-sml);
 }
