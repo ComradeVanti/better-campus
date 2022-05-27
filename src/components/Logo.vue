@@ -26,7 +26,7 @@ export default {
 }
 
 .small {
-  font-size: 1rem;
+  font-size: 1.5rem;
 }
 
 </style>

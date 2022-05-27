@@ -3,18 +3,18 @@
 
 :root {
 
-    font-size: 20px;
+    font-size: 15px;
 
     /* Sizes */
 
     --sze-sml: 10px;
     --sze-rgl: 20px;
     --sze-lrg: 40px;
-    --sze-top-bar: 50px;
+    --sze-corner: 10px;
 
     /* Font-sizes */
 
-    --fnt-sml: 0.75rem;
+    --fnt-sml: 0.9rem;
     --fnt-rgl: 1rem;
     --fnt-lrg: 2rem;
 
@@ -28,6 +28,8 @@
     --clr-on-background: #ffffff;
     --clr-surface: white;
     --clr-on-surface: #262626;
+    --clr-surface-alt: #d5d5d5;
+    --clr-on-surface-alt: #262626;
     --clr-primary: #1f4c94;
     --clr-on-primary: white;
 }
