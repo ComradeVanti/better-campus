@@ -21,7 +21,7 @@
         />
       </div>
     </div>
-    <plug/>
+    <plug />
   </div>
 </template>
 

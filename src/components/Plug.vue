@@ -1,10 +1,13 @@
 <template>
-  <div>Made with hate by <a href="https://github.com/ComradeVanti" target="_blank">Ramon</a> ❤️</div>
+  <div>
+    Made with hate by
+    <a href="https://github.com/ComradeVanti" target="_blank">Ramon</a> ❤️
+  </div>
 </template>
 
 <script>
 export default {
-  name: "Plug"
+  name: "Plug",
 };
 </script>
 

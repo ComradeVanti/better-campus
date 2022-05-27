@@ -1,6 +1,6 @@
 <template>
   <span :class="{ large: size === 'large', small: size === 'small' }"
-  >✨eCampus✨</span
+    >✨eCampus✨</span
   >
 </template>
 
@@ -14,9 +14,9 @@ export default {
       default: "large",
       validator(value) {
         return ["small", "large"].includes(value);
-      }
-    }
-  }
+      },
+    },
+  },
 };
 </script>
 
@@ -28,5 +28,4 @@ export default {
 .small {
   font-size: 1.5rem;
 }
-
 </style>

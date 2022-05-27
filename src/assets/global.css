@@ -1,50 +1,49 @@
-@import url('https://fonts.googleapis.com/css2?family=Lato&display=swap');
-@import url('https://fonts.googleapis.com/icon?family=Material+Icons');
+@import url("https://fonts.googleapis.com/css2?family=Lato&display=swap");
+@import url("https://fonts.googleapis.com/icon?family=Material+Icons");
 
 :root {
+  font-size: 15px;
 
-    font-size: 15px;
+  /* Sizes */
 
-    /* Sizes */
+  --sze-sml: 10px;
+  --sze-rgl: 20px;
+  --sze-lrg: 40px;
+  --sze-corner: 10px;
 
-    --sze-sml: 10px;
-    --sze-rgl: 20px;
-    --sze-lrg: 40px;
-    --sze-corner: 10px;
+  /* Font-sizes */
 
-    /* Font-sizes */
+  --fnt-sml: 0.9rem;
+  --fnt-rgl: 1rem;
+  --fnt-lrg: 1.2rem;
 
-    --fnt-sml: 0.9rem;
-    --fnt-rgl: 1rem;
-    --fnt-lrg: 1.2rem;
+  /* Shadows */
 
-    /* Shadows */
+  --sdw-rgl: 0 2px 4px -2px #2f2f2f;
 
-    --sdw-rgl: 0 2px 4px -2px #2f2f2f;
+  /* Colors */
 
-    /* Colors */
-
-    --clr-background:#262626;
-    --clr-on-background: #ffffff;
-    --clr-surface: white;
-    --clr-on-surface: #262626;
-    --clr-surface-alt: #d5d5d5;
-    --clr-on-surface-alt: #262626;
-    --clr-primary: #1f4c94;
-    --clr-on-primary: white;
+  --clr-background: #262626;
+  --clr-on-background: #ffffff;
+  --clr-surface: white;
+  --clr-on-surface: #262626;
+  --clr-surface-alt: #d5d5d5;
+  --clr-on-surface-alt: #262626;
+  --clr-primary: #1f4c94;
+  --clr-on-primary: white;
 }
 
 * {
-    font-family: 'Lato', sans-serif;
-    font-size: var(--fnt-rgl);
-    color: inherit;
+  font-family: "Lato", sans-serif;
+  font-size: var(--fnt-rgl);
+  color: inherit;
 }
 
 body {
-    width: 100vw;
-    height: 100vh;
-    overflow: hidden;
-    margin: 0;
-    background-color: var(--clr-background);
-    color: var(--clr-on-background);
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  margin: 0;
+  background-color: var(--clr-background);
+  color: var(--clr-on-background);
 }

@@ -8,9 +8,9 @@ export default {
   props: {
     type: {
       type: String,
-      required: true
-    }
-  }
+      required: true,
+    },
+  },
 };
 </script>
 
@@ -25,5 +25,4 @@ input {
   outline: none !important;
   box-sizing: border-box;
 }
-
 </style>

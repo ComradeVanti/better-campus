@@ -1,5 +1,5 @@
 <template>
-<button class="material-icons">{{icon}}</button>
+  <button class="material-icons">{{ icon }}</button>
 </template>
 
 <script>
@@ -8,9 +8,9 @@ export default {
   props: {
     icon: {
       type: String,
-      required: true
-    }
-  }
+      required: true,
+    },
+  },
 };
 </script>
 

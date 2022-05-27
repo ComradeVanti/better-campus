@@ -8,9 +8,9 @@
 export default {
   name: "CourseBadge",
   computed: {
-    courseLink(){
-      return `https://ecampus.fhstp.ac.at/course/view.php?id=${this.course.id}`
-    }
+    courseLink() {
+      return `https://ecampus.fhstp.ac.at/course/view.php?id=${this.course.id}`;
+    },
   },
   props: {
     course: {
