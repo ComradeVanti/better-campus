@@ -2,7 +2,7 @@
   <div class="block">
     <div class="header primary-container card" @click="toggleOpen">
       {{ semesterName }}
-      <span class="material-icons">arrow_drop_down</span>
+      <span class="material-icons">{{ iconName }}</span>
     </div>
     <div v-if="isOpen" class="courses">
       <SemesterNavCourse
@@ -32,6 +32,9 @@ export default {
     courses() {
       return this.semester.courses;
     },
+    iconName() {
+      return this.isOpen ? "arrow_drop_up" : "arrow_drop_down";
+    },
   },
   props: {
     semester: {
@@ -41,14 +44,14 @@ export default {
   },
   data() {
     return {
-      isOpen: false
-    }
+      isOpen: false,
+    };
   },
   methods: {
-    toggleOpen(){
-      this.isOpen = !this.isOpen
-    }
-  }
+    toggleOpen() {
+      this.isOpen = !this.isOpen;
+    },
+  },
 };
 </script>
 
