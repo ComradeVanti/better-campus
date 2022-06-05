@@ -15,9 +15,3 @@
  * @property {string} name
  * @property {id} id
  */
-
-/**
- * @typedef {Object} Semester
- * @property {string} name
- * @property {Course[]} courses
- */

@@ -15,6 +15,7 @@
 </template>
 
 <script>
+import * as Semester from "@/domain/Semester";
 import SemesterNavCourse from "@/components/SemesterNavCourse";
 export default {
   name: "SemesterNavBlock",
@@ -24,7 +25,7 @@ export default {
      * @return {string}
      */
     semesterName() {
-      return this.semester.name;
+      return Semester.getDisplayName(this.semester);
     },
     /**
      * @return {Course[]}
@@ -44,7 +45,7 @@ export default {
   },
   data() {
     return {
-      isOpen: false,
+      isOpen: Semester.isCurrent(this.semester),
     };
   },
   methods: {
