@@ -1,5 +1,5 @@
 <template>
-  <input :type="type" />
+  <input class="surface" :type="type" />
 </template>
 
 <script>
@@ -16,8 +16,6 @@ export default {
 
 <style scoped>
 input {
-  background-color: var(--clr-surface);
-  color: var(--clr-on-surface);
   border-radius: var(--sze-rgl);
   box-shadow: var(--sdw-rgl);
   padding: 0 var(--sze-sml);

@@ -1,5 +1,5 @@
 <template>
-  <button class="material-icons">{{ icon }}</button>
+  <button class="material-icons primary">{{ icon }}</button>
 </template>
 
 <script>
@@ -21,8 +21,6 @@ button {
   box-shadow: var(--sdw-rgl);
   border-radius: var(--sze-sml);
   border: 0;
-  background-color: var(--clr-primary);
-  color: var(--clr-on-primary);
   cursor: pointer;
 }
 </style>
