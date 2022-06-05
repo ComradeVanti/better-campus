@@ -37,13 +37,13 @@ export default {
 <style scoped>
 nav {
   display: flex;
-  align-items: end;
+  align-items: flex-end;
   padding: var(--sze-sml) var(--sze-rgl);
 }
 
 .links {
   display: flex;
-  align-items: end;
+  align-items: flex-end;
   margin: 0 var(--sze-lrg);
   flex-grow: 1;
 }
