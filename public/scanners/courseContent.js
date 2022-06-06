@@ -40,7 +40,7 @@ const tryExtractCourseName = (element) => {
  */
 const tryExtractLabel = (element, id) => {
   const ps = Array.from(element.querySelectorAll("p"));
-  const lines = ps.map((p) => p.innerText);
+  const lines = ps.map((p) => p.innerText).filter((line) => line.length > 0);
   return { id, type: "label", lines };
 };
 
