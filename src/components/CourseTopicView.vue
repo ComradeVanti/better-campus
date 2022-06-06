@@ -1,6 +1,6 @@
 <template>
   <div class="surface card">
-    {{ topic.name }}
+    <span class="name">{{ topic.name }}</span>
     <div class="activities">
       <activity-view
         v-for="activity in topic.activities"
@@ -29,6 +29,10 @@ export default {
 </script>
 
 <style scoped>
+.name {
+  font-size: var(--fnt-lrg);
+  margin-bottom: var(--sze-rgl);
+}
 .activities {
   display: flex;
   flex-direction: column;
