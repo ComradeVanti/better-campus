@@ -58,7 +58,7 @@ function extractCourse(element) {
  */
 function tryExtractSemester(element) {
   const labelElement = element.querySelector("p");
-  const courseElements = Array.from(element.querySelectorAll("ul>li"));
+  const courseElements = Array.from(element.querySelector("ul").children);
 
   const id = tryParseSemesterId(labelElement.innerText);
 
