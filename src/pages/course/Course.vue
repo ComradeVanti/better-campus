@@ -1,8 +1,7 @@
 <template>
   <div class="page">
-    <navbar sess-key=""></navbar>
-    <div class="page-content">
-    </div>
+    <navbar :sess-key="sessKey"></navbar>
+    <div class="page-content"></div>
     <plug />
   </div>
 </template>
@@ -12,7 +11,28 @@ import Navbar from "@/components/Navbar";
 import Plug from "@/components/Plug";
 export default {
   name: "Course",
-  components: { Plug, Navbar }
+  components: { Plug, Navbar },
+  computed: {
+    /**
+     * @return {string}
+     */
+    sessKey() {
+      return this.scanData?.sessKey ?? "";
+    },
+  },
+  data() {
+    return {
+      /**
+       * @type {CourseScanData | null}
+       */
+      scanData: null,
+    };
+  },
+  created() {
+    const app = document.querySelector("#app");
+    this.scanData = JSON.parse(app.getAttribute("scan-data"));
+    app.removeAttribute("scan-data");
+  },
 };
 </script>
 
