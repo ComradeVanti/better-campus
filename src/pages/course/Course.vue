@@ -3,6 +3,7 @@
     <navbar :sess-key="sessKey"></navbar>
     <div class="page-content">
       <semester-nav :semesters="semesters" />
+      <course-content-view :content="courseContent" />
     </div>
     <plug />
   </div>
@@ -12,9 +13,10 @@
 import Navbar from "@/components/Navbar";
 import Plug from "@/components/Plug";
 import SemesterNav from "@/components/SemesterNav";
+import CourseContentView from "@/components/CourseContentView";
 export default {
   name: "Course",
-  components: { SemesterNav, Plug, Navbar },
+  components: { CourseContentView, SemesterNav, Plug, Navbar },
   computed: {
     /**
      * @return {string}
@@ -27,6 +29,12 @@ export default {
      */
     semesters() {
       return this.scanData?.courseNav?.semesters ?? [];
+    },
+    /**
+     * @return {CourseContent}
+     */
+    courseContent() {
+      return this.scanData?.courseContent ?? { topics: [] };
     },
   },
   data() {

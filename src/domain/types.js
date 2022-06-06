@@ -20,3 +20,14 @@
  * @typedef {Object} CourseNav
  * @property {Semester[]} semesters
  */
+
+/**
+ * @typedef {Object} CourseTopic
+ * @property {id} id
+ * @property {string} name
+ */
+
+/**
+ * @typedef {Object} CourseContent
+ * @property {CourseTopic[]} topics
+ */
