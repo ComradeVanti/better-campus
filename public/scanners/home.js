@@ -83,11 +83,13 @@ function tryExtractSemester(element) {
  * @param {Document} doc
  * @return {Semester[] | null}
  */
-function tryExtractSemesters(doc) {
+function extractSemesters(doc) {
   const semesterContainers = Array.from(
     doc.querySelectorAll(semesterContainersSelector)
   );
-  return nullIfAnyNull(semesterContainers.map((e) => tryExtractSemester(e)));
+  return (
+    nullIfAnyNull(semesterContainers.map((e) => tryExtractSemester(e))) ?? []
+  );
 }
 
 /**
@@ -96,7 +98,7 @@ function tryExtractSemesters(doc) {
 const scanner = (doc) => {
   const sessKey = findSessKey(doc.head.innerText);
 
-  const semesters = tryExtractSemesters(doc);
+  const semesters = extractSemesters(doc);
 
   return { sessKey, semesters };
 };
