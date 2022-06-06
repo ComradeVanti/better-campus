@@ -7,9 +7,9 @@ import scanCourseNav from "./courseNav.js";
 
 const scanner = (doc) => {
   const sessKey = scanSessKey(doc);
-  const semesters = scanCourseNav(doc);
+  const courseNav = scanCourseNav(doc);
 
-  return sessKey && semesters ? { sessKey, semesters } : null;
+  return sessKey && courseNav ? { sessKey, courseNav } : null;
 };
 
 export default scanner;

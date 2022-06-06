@@ -71,13 +71,16 @@ function tryExtractSemester(element) {
 }
 
 /**
- * @type {Scanner<Semester[]>}
+ * @type {Scanner<CourseNav>}
  */
 const scanner = (doc) => {
   const semesterContainers = Array.from(
     doc.querySelectorAll(semesterContainersSelector)
   );
-  return nullIfAnyNull(semesterContainers.map((e) => tryExtractSemester(e)));
+  const semesters = nullIfAnyNull(
+    semesterContainers.map((e) => tryExtractSemester(e))
+  );
+  return semesters !== null ? { semesters } : null;
 };
 
 export default scanner;

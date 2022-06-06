@@ -15,3 +15,8 @@
  * @property {string} name
  * @property {id} id
  */
+
+/**
+ * @typedef {Object} CourseNav
+ * @property {Semester[]} semesters
+ */

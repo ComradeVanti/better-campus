@@ -2,7 +2,7 @@
   <div class="page">
     <navbar :sess-key="scanData.sessKey"></navbar>
     <div class="page-content">
-      <SemesterNav :semesters="scanData.semesters" />
+      <SemesterNav :semesters="scanData.courseNav.semesters" />
     </div>
     <plug />
   </div>
@@ -19,11 +19,11 @@ export default {
   data() {
     return {
       /**
-       * @type {LoginScanData}
+       * @type {HomeScanData}
        */
       scanData: {
         sessKey: "",
-        semesters: [],
+        courseNav: { semesters: [] },
       },
     };
   },
