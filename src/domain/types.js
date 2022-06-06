@@ -22,9 +22,29 @@
  */
 
 /**
+ * @typedef {"label" | "unknown"} ActivityType
+ */
+
+/**
+ * @typedef {Object} CourseActivity
+ * @property {id} id
+ * @property {ActivityType} type
+ */
+
+/**
+ * @typedef {CourseActivity} UnknownActivity
+ */
+
+/**
+ * @typedef {CourseActivity} LabelActivity
+ * @property {string[]} lines
+ */
+
+/**
  * @typedef {Object} CourseTopic
  * @property {id} id
  * @property {string} name
+ * @property {CourseActivity[]} activities
  */
 
 /**

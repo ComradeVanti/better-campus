@@ -35,13 +35,51 @@ const tryExtractCourseName = (element) => {
 
 /**
  * @param {HTMLElement} element
+ * @param {id} id
+ * @return {LabelActivity | null}
+ */
+const tryExtractLabel = (element, id) => {
+  const ps = Array.from(element.querySelectorAll("p"));
+  const lines = ps.map((p) => p.innerText);
+  return { id, type: "label", lines };
+};
+
+/**
+ * @param {HTMLElement} element
+ * @return {CourseActivity| null}
+ */
+const tryExtractActivity = (element) => {
+  const id = parseInt(element.id.substring(6));
+
+  const isActivityOfType = (type) => element.classList.contains(type);
+
+  return isActivityOfType("label")
+    ? tryExtractLabel(element, id)
+    : { id, type: "unknown" };
+};
+
+/**
+ * @param {HTMLElement} element
+ * @return {CourseActivity[] | null}
+ */
+const tryExtractActivities = (element) => {
+  const activityElements = Array.from(element.querySelectorAll(".activity"));
+
+  return nullIfAnyNull(activityElements.map((e) => tryExtractActivity(e)));
+};
+
+/**
+ * @param {HTMLElement} element
  * @return {CourseTopic | null}
  */
 const tryExtractTopic = (element) => {
   const id = tryExtractCourseId(element);
   const name = tryExtractCourseName(element);
+  const activities = tryExtractActivities(element);
 
-  return id !== null && name !== null ? { id, name } : null;
+  return id !== null && name !== null && activities != null
+    ? { id, name, activities }
+    : null;
 };
 
 /**
