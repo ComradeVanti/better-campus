@@ -72,6 +72,7 @@ body {
   flex-grow: 1;
   display: flex;
   flex-direction: column;
+  max-height: 100%;
 }
 
 .page-content {
@@ -82,5 +83,6 @@ body {
   align-items: flex-start;
   margin-bottom: var(--sze-lrg);
   gap: var(--sze-rgl);
+  max-height: 100%;
 }
 </style>
