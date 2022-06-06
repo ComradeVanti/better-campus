@@ -1,8 +1,12 @@
+import scanSessKey from "./sessKey.js";
+
 /**
- * @type {Scanner}
+ * @type {Scanner<CourseScanData>}
  */
+
 const scanner = (doc) => {
-  return {};
+  const sessKey = scanSessKey(doc);
+  return sessKey ? { sessKey } : null;
 };
 
 export default scanner;

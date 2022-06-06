@@ -1,3 +1,4 @@
 /**
- * @typedef {Object} ScanData
+ * @typedef {Object} CourseScanData
+ * @property {string} sessKey
  */
