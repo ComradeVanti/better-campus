@@ -1,6 +1,7 @@
 const pageForPath = {
   "/": "home",
   "/login/index.php": "login",
+  "/course/view.php": "course",
 };
 
 /**

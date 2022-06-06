@@ -5,6 +5,7 @@ module.exports = defineConfig({
   pages: {
     login: "src/pages/login/main.js",
     home: "src/pages/home/main.js",
+    course: "src/pages/course/main.js",
   },
   chainWebpack: (config) => {
     config.plugin("copy").tap(([options]) => {
