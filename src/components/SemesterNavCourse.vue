@@ -1,5 +1,5 @@
 <template>
-  <span class="course-name">{{ courseName }}</span>
+  <a class="course-name" :href="courseLink">{{ courseName }}</a>
 </template>
 
 <script>
@@ -11,14 +11,20 @@ export default {
      */
     courseName() {
       return this.course.name;
-    }
+    },
+    /**
+     * @return {string}
+     */
+    courseLink() {
+      return `https://ecampus.fhstp.ac.at/course/view.php?id=${this.course.id}`;
+    },
   },
   props: {
     course: {
       type: Object,
-      required: true
-    }
-  }
+      required: true,
+    },
+  },
 };
 </script>
 
@@ -29,5 +35,7 @@ export default {
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
+  cursor: pointer;
+  text-decoration: none;
 }
 </style>
