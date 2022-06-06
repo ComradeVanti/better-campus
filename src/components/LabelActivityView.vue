@@ -1,9 +1,5 @@
 <template>
-  <div class="lines">
-    <p v-for="(line, i) in activity.lines" :key="i">
-      {{ line }}
-    </p>
-  </div>
+  <div v-html="activity.textHtml"></div>
 </template>
 
 <script>
@@ -21,9 +17,4 @@ export default {
 };
 </script>
 
-<style scoped>
-.lines {
-  display: flex;
-  flex-direction: column;
-}
-</style>
+<style scoped></style>

@@ -37,7 +37,7 @@
 
 /**
  * @typedef {CourseActivity} LabelActivity
- * @property {string[]} lines
+ * @property {html} textHtml
  */
 
 /**

@@ -10,18 +10,18 @@ const scrapeUnknown = (element, id) => ({ id, type: "unknown" });
 /**
  * @param {HTMLElement} element
  * @param {id} id
- * @return {LabelActivity | null}
+ * @return {LabelActivity | UnknownActivity | null}
  */
 const tryScrapeLabel = (element, id) => {
-  /**
-   * @type {HTMLElement[]}
-   */
-  const lineElements = Array.from(element.querySelectorAll("p,span,strong,b"));
-  const lines = lineElements
-    .filter((lineElement) => lineElement.childElementCount === 0)
-    .map((lineElement) => lineElement.innerText)
-    .filter((line) => line.length > 0);
-  return { id, type: "label", lines };
+  const paragraphElement = element.querySelector(".no-overflow>p");
+  if (paragraphElement) {
+    const textHtml = paragraphElement.innerHTML;
+    return { id, type: "label", textHtml };
+  }
+
+  // TODO: Handle images
+
+  return scrapeUnknown(element, id);
 };
 
 /**
