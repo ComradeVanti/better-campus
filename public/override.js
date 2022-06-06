@@ -35,12 +35,13 @@ const getOverrideDocAsync = async (pageName) => {
 
 /**
  * @param {string} pageName
- * @return {Promise<Scanner>}
+ * @return {Promise<Scanner<any>>}
  */
-const getScannerAsync = (pageName) => {
-  return import(getExtensionUrl(`scanners/${pageName}.js`))
-    .then((m) => m.default)
-    .catch(() => console.log(`No scanner for ${pageName}`));
+const getScannerAsync = async (pageName) => {
+  const filePath = `scanners/${pageName}ScanData.js`;
+  const url = getExtensionUrl(filePath);
+  const { default: scanner } = await import(url);
+  return scanner ?? (() => ({}));
 };
 
 const runScripts = () => {
@@ -63,10 +64,15 @@ const runScripts = () => {
   const scanner = await getScannerAsync(pageName);
 
   const data = scanner(document);
-  document.replaceChild(overrideDoc.documentElement, document.documentElement);
-  document
-    .querySelector("#app")
-    .setAttribute("scan-data", JSON.stringify(data));
+  if (data) {
+    document.replaceChild(
+      overrideDoc.documentElement,
+      document.documentElement
+    );
+    document
+      .querySelector("#app")
+      .setAttribute("scan-data", JSON.stringify(data));
+  } else console.error("Could not scan data!");
 
   runScripts();
 })();

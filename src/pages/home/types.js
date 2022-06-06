@@ -1,5 +1,5 @@
 /**
- * @typedef {Object} ScanData
+ * @typedef {Object} HomeScanData
  * @property {string} sessKey
  * @property {Semester[]} semesters
  */

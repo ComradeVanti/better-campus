@@ -1,4 +1,3 @@
-const sessKeyRegex = /(?<="sesskey":")[^"]+/;
 const semesterContainersSelector =
   ".block_navigation>.card-body>.card-text>ul>li>ul>li:nth-child(3)>ul>li:nth-child(n+3)";
 const courseInfoRegex =
@@ -24,14 +23,6 @@ function tryParseSemesterId(s) {
 function nullIfAnyNull(items) {
   if (items.findIndex((it) => it === null) !== -1) return null;
   return items;
-}
-
-/**
- * @param {html} html
- * @return {string}
- */
-function findSessKey(html) {
-  return sessKeyRegex.exec(html)[0];
 }
 
 /**
@@ -80,27 +71,13 @@ function tryExtractSemester(element) {
 }
 
 /**
- * @param {Document} doc
- * @return {Semester[] | null}
+ * @type {Scanner<Semester[]>}
  */
-function extractSemesters(doc) {
+const scanner = (doc) => {
   const semesterContainers = Array.from(
     doc.querySelectorAll(semesterContainersSelector)
   );
-  return (
-    nullIfAnyNull(semesterContainers.map((e) => tryExtractSemester(e))) ?? []
-  );
-}
-
-/**
- * @type {Scanner}
- */
-const scanner = (doc) => {
-  const sessKey = findSessKey(doc.head.innerText);
-
-  const semesters = extractSemesters(doc);
-
-  return { sessKey, semesters };
+  return nullIfAnyNull(semesterContainers.map((e) => tryExtractSemester(e)));
 };
 
 export default scanner;

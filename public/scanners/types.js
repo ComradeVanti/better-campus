@@ -1,5 +1,6 @@
 /**
+ * @template T
  * @callback Scanner
  * @param {Document} doc
- * @return {Object}
+ * @return {T | null}
  */
