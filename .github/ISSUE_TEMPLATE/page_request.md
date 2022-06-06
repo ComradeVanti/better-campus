@@ -2,7 +2,7 @@
 name: Page-request
 about: Request that a page currently not covered by better-ecampus be added
 title: ''
-labels: ''
+labels: 'new-page'
 assignees: ComradeVanti
 
 ---
