@@ -1,3 +1,12 @@
+import { findTextUnder } from "./scanUtil.js";
+
+/**
+ * @param {HTMLElement} element
+ * @param {id} id
+ * @return {UnknownActivity}
+ */
+const scrapeUnknown = (element, id) => ({ id, type: "unknown" });
+
 /**
  * @param {HTMLElement} element
  * @param {id} id
@@ -16,6 +25,22 @@ const tryScrapeLabel = (element, id) => {
 };
 
 /**
+ * @param {HTMLElement} element
+ * @param {id} id
+ * @return {UrlActivity | null}
+ */
+const tryScrapeUrl = (element, id) => {
+  const url = element.querySelector("a").href;
+  const linkName =
+    element.querySelector(".instancename").firstChild.textContent;
+
+  const afterContentElement = element.querySelector(".contentafterlink");
+  const lines = afterContentElement ? findTextUnder(afterContentElement) : [];
+
+  return { id, type: "url", url, linkName, lines };
+};
+
+/**
  * @type {ScrapeElement<HTMLElement, CourseActivity>}
  */
 export const tryScrapeActivity = (element) => {
@@ -23,7 +48,16 @@ export const tryScrapeActivity = (element) => {
 
   const isActivityOfType = (type) => element.classList.contains(type);
 
-  return isActivityOfType("label")
-    ? tryScrapeLabel(element, id)
-    : { id, type: "unknown" };
+  /**
+   * @type {function(HTMLElement, id) : CourseActivity | null}
+   */
+  const scraper =
+    [
+      ["label", tryScrapeLabel],
+      ["url", tryScrapeUrl],
+    ]
+      .find((it) => isActivityOfType(it[0]))
+      ?.at(1) ?? scrapeUnknown;
+
+  return scraper(element, id);
 };

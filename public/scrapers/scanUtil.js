@@ -19,3 +19,18 @@ export function tryScanEach(elements, scanner) {
   const scanned = Array.from(elements).map((e) => scanner(e));
   return nullIfAnyNull(scanned);
 }
+
+/**
+ * @param {HTMLElement} element
+ * @return {string[]}
+ */
+export function findTextUnder(element) {
+  let node;
+  /**
+   * @type {Node[]}
+   */
+  let textNodes = [];
+  let walk = document.createTreeWalker(element, NodeFilter.SHOW_TEXT);
+  while ((node = walk.nextNode())) textNodes.push(node);
+  return textNodes.map((n) => n.textContent);
+}
