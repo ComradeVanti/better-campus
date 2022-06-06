@@ -58,11 +58,11 @@ body {
 
 .page-content {
   flex-grow: 1;
-  padding: var(--sze-rgl);
+  padding: var(--sze-lrg);
   display: flex;
   flex-direction: row;
   align-items: flex-start;
-  gap: var(--sze-rgl);
   margin-bottom: var(--sze-lrg);
+  gap: var(--sze-rgl);
 }
 </style>
