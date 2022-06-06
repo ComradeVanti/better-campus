@@ -39,8 +39,14 @@ const tryExtractCourseName = (element) => {
  * @return {LabelActivity | null}
  */
 const tryExtractLabel = (element, id) => {
-  const ps = Array.from(element.querySelectorAll("p"));
-  const lines = ps.map((p) => p.innerText).filter((line) => line.length > 0);
+  /**
+   * @type {HTMLElement[]}
+   */
+  const lineElements = Array.from(element.querySelectorAll("p,span,strong,b"));
+  const lines = lineElements
+    .filter((lineElement) => lineElement.childElementCount === 0)
+    .map((lineElement) => lineElement.innerText)
+    .filter((line) => line.length > 0);
   return { id, type: "label", lines };
 };
 
