@@ -93,7 +93,9 @@ const tryExtractTopic = (element) => {
  */
 const scanner = (doc) => {
   const topicElements = tryFindTopicElements(doc);
-  const topics = nullIfAnyNull(topicElements.map((e) => tryExtractTopic(e)));
+  const topics = nullIfAnyNull(
+    topicElements.map((e) => tryExtractTopic(e))
+  )?.filter((topic) => topic.activities.length > 0); // Filter out empty topics
   return topics ? { topics } : null;
 };
 
