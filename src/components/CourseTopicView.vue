@@ -1,6 +1,6 @@
 <template>
   <div class="surface card">
-    <span class="name">{{ topic.name }}</span>
+    <div class="name">{{ topic.name }}</div>
     <div class="activities">
       <activity-view
         v-for="activity in topic.activities"
@@ -36,5 +36,6 @@ export default {
 .activities {
   display: flex;
   flex-direction: column;
+  gap: var(--sze-rgl);
 }
 </style>
