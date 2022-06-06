@@ -1,5 +1,5 @@
 <template>
-  <a class="course-name" :href="courseLink">{{ courseName }}</a>
+  <a class="course-name" :href="courseLink" :title="courseName">{{ courseName }}</a>
 </template>
 
 <script>
