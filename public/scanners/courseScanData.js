@@ -3,7 +3,7 @@ import scanCourseNav from "./courseNav.js";
 import scanCourseContent from "./courseContent.js";
 
 /**
- * @type {Scanner<CourseScanData>}
+ * @type {DocScanner<CourseScanData>}
  */
 const scanner = (doc) => {
   const sessKey = scanSessKey(doc);

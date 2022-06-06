@@ -1,7 +1,7 @@
 import scanLoginToken from "./loginToken.js";
 
 /**
- * @type {Scanner<LoginScanData>}
+ * @type {DocScanner<LoginScanData>}
  */
 export default (doc) => {
   const loginToken = scanLoginToken(doc);

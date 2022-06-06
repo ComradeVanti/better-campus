@@ -35,7 +35,7 @@ const getOverrideDocAsync = async (pageName) => {
 
 /**
  * @param {string} pageName
- * @return {Promise<Scanner<any>>}
+ * @return {Promise<DocScanner<any>>}
  */
 const getScannerAsync = async (pageName) => {
   const filePath = `scanners/${pageName}ScanData.js`;

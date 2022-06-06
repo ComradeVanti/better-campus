@@ -1,11 +1,10 @@
 const sessKeyRegex = /(?<="sesskey":")[^"]+/;
 
 /**
- * @type {Scanner<string>}
+ * @type {DocScanner<string>}
  */
 const scanner = (doc) => {
-  const headerHtml = doc.head.innerText;
-  const match = sessKeyRegex.exec(headerHtml);
+  const match = sessKeyRegex.exec(doc.head.innerText);
   return match ? match[0] : null;
 };
 

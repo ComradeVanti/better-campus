@@ -1,5 +1,5 @@
 /**
- * @type {Scanner<string>}
+ * @type {DocScanner<string>}
  */
 const scanner = (doc) => {
   /**
