@@ -1,12 +1,10 @@
 /**
- * @type {DocScanner<string>}
+ * @type {ScrapeDoc<string>}
  */
-const scanner = (doc) => {
+export const tryScrapeLoginToken = (doc) => {
   /**
    * @type {HTMLInputElement|null}
    */
   const element = doc.querySelector("input[name='logintoken']");
   return element?.value ?? null;
 };
-
-export default scanner;

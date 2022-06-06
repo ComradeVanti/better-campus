@@ -1,4 +1,4 @@
-import { tryScanCourse } from "./course.js";
+import { tryScrapeCourse } from "./course.js";
 import { tryScanEach } from "./scanUtil.js";
 
 const semesterIdRegex = /(?<season>WS|SS)(?<year>\d{4})/;
@@ -15,22 +15,22 @@ const tryParseSemesterId = (s) => {
 };
 
 /**
- * @type {ElementScanner<HTMLElement, SemesterId>}
+ * @type {ScrapeElement<HTMLElement, SemesterId>}
  */
-const tryGetId = (element) => {
+const tryScrapeId = (element) => {
   const idText = element.innerText;
   return tryParseSemesterId(idText);
 };
 
 /**
- * @type {ElementScanner<HTMLElement, Semester>}
+ * @type {ScrapeElement<HTMLElement, Semester>}
  */
-export const tryExtractSemester = (element) => {
+export const tryScrapeSemester = (element) => {
   const labelElement = element.querySelector("p");
   const courseElements = element.querySelector("ul").children;
 
-  const id = tryGetId(labelElement);
-  const courses = tryScanEach(courseElements, tryScanCourse);
+  const id = tryScrapeId(labelElement);
+  const courses = tryScanEach(courseElements, tryScrapeCourse);
 
   return id !== null && courses !== null ? { id, courses } : null;
 };

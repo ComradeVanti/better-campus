@@ -12,7 +12,7 @@ function nullIfAnyNull(items) {
  * @template E
  * @template T
  * @param {ArrayLike<E> | HTMLCollection | E[]} elements
- * @param {ElementScanner<E,T>} scanner
+ * @param {ScrapeElement<E,T>} scanner
  * @return {T[] | null}
  */
 export function tryScanEach(elements, scanner) {

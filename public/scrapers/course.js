@@ -12,30 +12,30 @@ function readAfter(s, search) {
 }
 
 /**
- * @type {ElementScanner<HTMLElement, string>}
+ * @type {ScrapeElement<HTMLElement, string>}
  */
-const tryGetCourseName = (element) => {
+const tryScrapeName = (element) => {
   const info = element.title;
   const match = courseInfoRegex.exec(info);
   return match ? match.groups.name : null;
 };
 
 /**
- * @type {ElementScanner<HTMLLinkElement, number>}
+ * @type {ScrapeElement<HTMLLinkElement, number>}
  */
-const tryGetId = (element) => {
+const tryScrapeId = (element) => {
   const idString = readAfter(element.href, "=");
   return parseInt(idString);
 };
 
 /**
- * @type {ElementScanner<HTMLElement, Course>}
+ * @type {ScrapeElement<HTMLElement, Course>}
  */
-export const tryScanCourse = (element) => {
+export const tryScrapeCourse = (element) => {
   const linkElement = element.querySelector("a");
 
-  const name = tryGetCourseName(linkElement);
-  const id = tryGetId(linkElement);
+  const name = tryScrapeName(linkElement);
+  const id = tryScrapeId(linkElement);
 
   return name !== null && id !== null ? { name, id } : null;
 };

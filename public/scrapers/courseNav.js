@@ -1,16 +1,14 @@
-import { tryExtractSemester } from "./semester.js";
+import { tryScrapeSemester } from "./semester.js";
 import { tryScanEach } from "./scanUtil.js";
 
 const semesterContainersSelector =
   ".block_navigation>.card-body>.card-text>ul>li>ul>li:nth-child(3)>ul>li:nth-child(n+3)";
 
 /**
- * @type {DocScanner<CourseNav>}
+ * @type {ScrapeDoc<CourseNav>}
  */
-const scanner = (doc) => {
+export const tryScrapeCourseNav = (doc) => {
   const semesterContainers = doc.querySelectorAll(semesterContainersSelector);
-  const semesters = tryScanEach(semesterContainers, tryExtractSemester);
+  const semesters = tryScanEach(semesterContainers, tryScrapeSemester);
   return semesters !== null ? { semesters } : null;
 };
-
-export default scanner;

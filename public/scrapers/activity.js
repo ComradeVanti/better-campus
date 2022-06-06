@@ -3,7 +3,7 @@
  * @param {id} id
  * @return {LabelActivity | null}
  */
-const tryExtractLabel = (element, id) => {
+const tryScrapeLabel = (element, id) => {
   /**
    * @type {HTMLElement[]}
    */
@@ -16,14 +16,14 @@ const tryExtractLabel = (element, id) => {
 };
 
 /**
- * @type {ElementScanner<HTMLElement, CourseActivity>}
+ * @type {ScrapeElement<HTMLElement, CourseActivity>}
  */
-export const tryExtractActivity = (element) => {
+export const tryScrapeActivity = (element) => {
   const id = parseInt(element.id.substring(6));
 
   const isActivityOfType = (type) => element.classList.contains(type);
 
   return isActivityOfType("label")
-    ? tryExtractLabel(element, id)
+    ? tryScrapeLabel(element, id)
     : { id, type: "unknown" };
 };

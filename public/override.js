@@ -35,13 +35,13 @@ const getOverrideDocAsync = async (pageName) => {
 
 /**
  * @param {string} pageName
- * @return {Promise<DocScanner<any>>}
+ * @return {Promise<ScrapeDoc<any>>}
  */
-const getScannerAsync = async (pageName) => {
-  const filePath = `scanners/${pageName}ScanData.js`;
+const getScraperAsync = async (pageName) => {
+  const filePath = `scrapers/${pageName}ScanData.js`;
   const url = getExtensionUrl(filePath);
-  const { default: scanner } = await import(url);
-  return scanner ?? (() => ({}));
+  const { tryScrapePage: scraper } = await import(url);
+  return scraper ?? (() => ({}));
 };
 
 const runScripts = () => {
@@ -61,9 +61,9 @@ const runScripts = () => {
   if (!pageName) document.documentElement.style.display = "initial";
 
   const overrideDoc = await getOverrideDocAsync(pageName);
-  const scanner = await getScannerAsync(pageName);
+  const scraper = await getScraperAsync(pageName);
 
-  const data = scanner(document);
+  const data = scraper(document);
   if (data) {
     document.replaceChild(
       overrideDoc.documentElement,

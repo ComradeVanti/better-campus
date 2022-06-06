@@ -1,14 +1,14 @@
 /**
  * @template {HTMLElement} E
  * @template T
- * @callback ElementScanner
+ * @callback ScrapeElement
  * @param {E} element
  * @return {T | null}
  */
 
 /**
  * @template T
- * @callback DocScanner
+ * @callback ScrapeDoc
  * @param {Document} doc
  * @return {T | null}
  */
