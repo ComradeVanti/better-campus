@@ -1,6 +1,6 @@
 <template>
   <div class="block">
-    <div class="header primary-container card" @click="toggleOpen">
+    <div class="header surface card" @click="toggleOpen">
       {{ semesterName }}
       <span class="material-icons">{{ iconName }}</span>
     </div>

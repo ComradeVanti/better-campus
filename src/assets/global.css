@@ -31,14 +31,10 @@
     --color-on-surface: #1d1b1e;
     --color-surface-variant: #e7e0ec;
     --color-on-surface-variant: #49454f;
-    --color-primary: #315da8;
-    --color-on-primary: #ffffff;
-    --color-primary-container: #d6e2ff;
-    --color-on-primary-container: #001a43;
-    --color-secondary: #6e5d00;
+    --color-primary: #e0d84b;
+    --color-on-primary: #252525;
+    --color-secondary: #F495BF;
     --color-on-secondary: #ffffff;
-    --color-secondary-container: #fce264;
-    --color-on-secondary-container: #221b00;
     --color-error: #b3261e;
     --color-on-error: #ffffff;
 }
@@ -79,19 +75,9 @@ body {
     color: var(--color-on-primary);
 }
 
-.primary-container {
-    background-color: var(--color-primary-container);
-    color: var(--color-on-primary-container);
-}
-
 .secondary {
     background-color: var(--color-secondary);
     color: var(--color-on-secondary);
-}
-
-.secondary-container {
-    background-color: var(--color-secondary-container);
-    color: var(--color-on-secondary-container);
 }
 
 .error {
