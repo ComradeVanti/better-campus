@@ -14,6 +14,7 @@ import Navbar from "@/components/Navbar";
 import Plug from "@/components/Plug";
 import SemesterNav from "@/components/SemesterNav";
 import CourseContentView from "@/components/CourseContentView";
+
 export default {
   name: "Course",
   components: { CourseContentView, SemesterNav, Plug, Navbar },
@@ -35,21 +36,21 @@ export default {
      */
     courseContent() {
       return this.scanData?.courseContent ?? { topics: [] };
-    },
+    }
   },
   data() {
     return {
       /**
        * @type {CourseScanData | null}
        */
-      scanData: null,
+      scanData: null
     };
   },
   created() {
     const app = document.querySelector("#app");
     this.scanData = JSON.parse(app.getAttribute("scan-data"));
     app.removeAttribute("scan-data");
-  },
+  }
 };
 </script>
 
@@ -63,26 +64,24 @@ body {
 
 #app {
   height: 100vh;
-  display: flex;
-  flex-direction: column;
+  position: relative;
 }
 
 .page {
+  position: absolute;
   padding-top: var(--sze-rgl);
-  flex-grow: 1;
   display: flex;
   flex-direction: column;
-  max-height: 100%;
+  inset: 0;
 }
 
 .page-content {
-  flex-grow: 1;
+  flex: 1;
   padding: var(--sze-lrg);
   display: flex;
   flex-direction: row;
   align-items: flex-start;
-  margin-bottom: var(--sze-lrg);
   gap: var(--sze-rgl);
-  max-height: 100%;
+  overflow-y: hidden;
 }
 </style>

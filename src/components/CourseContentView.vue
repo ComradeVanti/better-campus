@@ -31,8 +31,9 @@ export default {
   flex-direction: column;
   gap: var(--sze-rgl);
   align-items: stretch;
-  flex-grow: 1;
-  max-height: 100%;
+  flex: 1;
   overflow-y: auto;
+  max-height: 100%;
+  margin-bottom: var(--sze-lrg);
 }
 </style>
