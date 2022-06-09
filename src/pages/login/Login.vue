@@ -50,29 +50,23 @@ export default {
 <style>
 @import "@/assets/global.css";
 
-body {
-  background-size: cover;
-  background-position: center;
-  color: white;
-}
-
 #logo {
-  margin-bottom: var(--sze-rgl);
+  margin-bottom: var(--space-large);
 }
 
 form {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr)) auto;
   grid-template-rows: auto auto;
-  row-gap: var(--sze-sml);
-  column-gap: var(--sze-rgl);
+  row-gap: var(--space-small);
+  column-gap: var(--space-regular);
 }
 
 #page-content {
   width: 50%;
   height: 100%;
   max-width: 600px;
-  padding: var(--sze-lrg);
+  padding: var(--space-large);
   display: flex;
   flex-direction: column;
 }

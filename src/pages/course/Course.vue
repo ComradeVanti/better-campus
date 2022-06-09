@@ -69,7 +69,7 @@ body {
 
 .page {
   position: absolute;
-  padding-top: var(--sze-rgl);
+  padding-top: var(--space-regular);
   display: flex;
   flex-direction: column;
   inset: 0;
@@ -77,11 +77,11 @@ body {
 
 .page-content {
   flex: 1;
-  padding: var(--sze-lrg);
+  padding: var(--space-large);
   display: flex;
   flex-direction: row;
   align-items: flex-start;
-  gap: var(--sze-rgl);
+  gap: var(--space-large);
   overflow-y: hidden;
 }
 </style>

@@ -16,9 +16,9 @@ export default {
 
 <style scoped>
 input {
-  border-radius: var(--sze-rgl);
-  box-shadow: var(--sdw-rgl);
-  padding: 0 var(--sze-sml);
+  border-radius: var(--radius-corner);
+  box-shadow: var(--shadow-regular);
+  padding: 0 var(--space-small);
   border: white 2px solid;
   outline: none !important;
   box-sizing: border-box;

@@ -50,19 +50,19 @@ body {
 }
 
 .page {
-  padding-top: var(--sze-rgl);
-  flex-grow: 1;
+  padding-top: var(--space-regular);
+  flex: 1;
   display: flex;
   flex-direction: column;
 }
 
 .page-content {
-  flex-grow: 1;
-  padding: var(--sze-lrg);
+  flex: 1;
+  padding: var(--space-large);
   display: flex;
   flex-direction: row;
   align-items: flex-start;
-  margin-bottom: var(--sze-lrg);
-  gap: var(--sze-rgl);
+  margin-bottom: var(--space-large);
+  gap: var(--space-large);
 }
 </style>

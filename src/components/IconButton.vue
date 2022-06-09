@@ -16,10 +16,10 @@ export default {
 
 <style scoped>
 button {
-  font-size: var(--fnt-sml);
-  padding: var(--sze-sml);
-  box-shadow: var(--sdw-rgl);
-  border-radius: var(--sze-sml);
+  font-size: var(--font-size-small);
+  padding: var(--space-small);
+  box-shadow: var(--shadow-regular);
+  border-radius: var(--radius-corner);
   border: 0;
   cursor: pointer;
 }

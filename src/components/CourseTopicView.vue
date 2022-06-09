@@ -30,12 +30,12 @@ export default {
 
 <style scoped>
 .name {
-  font-size: var(--fnt-lrg);
-  margin-bottom: var(--sze-rgl);
+  font-size: var(--font-size-large);
+  margin-bottom: var(--space-regular);
 }
 .activities {
   display: flex;
   flex-direction: column;
-  gap: var(--sze-rgl);
+  gap: var(--space-regular);
 }
 </style>

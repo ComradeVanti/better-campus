@@ -30,7 +30,7 @@ export default {
 
 <style scoped>
 .course-name {
-  margin-bottom: var(--sze-rgl);
+  margin-bottom: var(--space-regular);
   width: 100%;
   overflow: hidden;
   text-overflow: ellipsis;

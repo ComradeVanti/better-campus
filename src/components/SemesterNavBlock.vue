@@ -59,7 +59,7 @@ export default {
 <style scoped>
 .block {
   width: 200px;
-  margin-bottom: var(--sze-lrg);
+  margin-bottom: var(--space-regular);
 }
 
 .header {
@@ -67,13 +67,13 @@ export default {
   justify-content: space-between;
   align-items: center;
   cursor: pointer;
-  margin-bottom: var(--sze-rgl);
+  margin-bottom: var(--space-regular);
 }
 
 .courses {
   display: flex;
   flex-direction: column;
   align-items: stretch;
-  padding-left: var(--sze-lrg);
+  padding-left: var(--space-large);
 }
 </style>

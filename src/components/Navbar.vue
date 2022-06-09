@@ -38,19 +38,18 @@ export default {
 nav {
   display: flex;
   align-items: flex-end;
-  padding: var(--sze-sml) var(--sze-rgl);
+  padding: 0 var(--space-regular);
 }
 
 .links {
   display: flex;
   align-items: flex-end;
-  margin: 0 var(--sze-lrg);
-  flex-grow: 1;
+  margin: 0 var(--space-large);
+  flex: 1;
 }
 
 a {
   text-decoration: none;
-  font-size: var(--fnt-sml);
-  margin-right: var(--sze-rgl);
+  margin-right: var(--space-regular);
 }
 </style>

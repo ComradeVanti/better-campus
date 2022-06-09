@@ -13,14 +13,14 @@ export default {
 
 <style scoped>
 div {
-  position: fixed;
-  right: var(--sze-rgl);
-  bottom: var(--sze-rgl);
-  font-size: var(--fnt-sml);
+  position: absolute;
+  right: var(--space-regular);
+  bottom: var(--space-regular);
+  font-size: var(--font-size-small);
 }
 
 a {
   text-decoration: none;
-  font-size: var(--fnt-sml);
+  font-size: var(--font-size-small);
 }
 </style>

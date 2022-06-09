@@ -29,11 +29,11 @@ export default {
 .topics {
   display: flex;
   flex-direction: column;
-  gap: var(--sze-rgl);
+  gap: var(--space-regular);
   align-items: stretch;
   flex: 1;
   overflow-y: auto;
   max-height: 100%;
-  margin-bottom: var(--sze-lrg);
+  margin-bottom: var(--space-large);
 }
 </style>
