@@ -22,7 +22,7 @@
  */
 
 /**
- * @typedef {"label" | "url" | "unknown"} ActivityType
+ * @typedef {"label" | "url" | "resource", "unknown"} ActivityType
  */
 
 /**
@@ -45,6 +45,13 @@
  * @property {url} url
  * @property {string} linkName
  * @property {string[]} lines
+ */
+
+/**
+ * @typedef {CourseActivity} ResourceActivity
+ * @property {string} typeName
+ * @property {string} name
+ * @property {html} description
  */
 
 /**

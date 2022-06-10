@@ -1,15 +1,7 @@
+import { readAfter } from "./scanUtil.js";
+
 const courseInfoRegex =
   /^[- ]*(?<name>.+) ((?<format>[A-Z]{2,3})|-).*\((?<lecturers>.*)\)/;
-
-/**
- * @param {string} s
- * @param {string} search
- * @return {string}
- */
-function readAfter(s, search) {
-  const index = s.indexOf(search);
-  return s.substring(index + search.length);
-}
 
 /**
  * @type {ScrapeElement<HTMLElement, string>}

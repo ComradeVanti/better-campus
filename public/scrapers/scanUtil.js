@@ -1,4 +1,14 @@
 /**
+ * @param {string} s
+ * @param {string} search
+ * @return {string}
+ */
+export function readAfter(s, search) {
+  const index = s.indexOf(search);
+  return s.substring(index + search.length);
+}
+
+/**
  * @template T
  * @param {(T | null)[]} items
  * @return {T[] | null}

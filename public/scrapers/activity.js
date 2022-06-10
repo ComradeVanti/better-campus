@@ -1,4 +1,4 @@
-import { findTextUnder } from "./scanUtil.js";
+import { findTextUnder, readAfter } from "./scanUtil.js";
 
 /**
  * @param {HTMLElement} element
@@ -41,10 +41,29 @@ const tryScrapeUrl = (element, id) => {
 };
 
 /**
+ * @param {HTMLElement} element
+ * @param {id} id
+ * @return {ResourceActivity | null}
+ */
+const tryScrapeResource = (element, id) => {
+  const imgElement = element.querySelector("img");
+  const nameElement = element.querySelector(".instancename");
+  const descriptionElement = element.querySelector(".no-overflow>.no-overflow");
+
+  const typeName = imgElement?.getAttribute("role");
+  const name = nameElement?.firstChild?.textContent;
+  const description = descriptionElement?.innerHTML;
+
+  return typeName !== null && name !== null && description !== null
+    ? { id, type: "resource", typeName, name, description }
+    : null;
+};
+
+/**
  * @type {ScrapeElement<HTMLElement, CourseActivity>}
  */
 export const tryScrapeActivity = (element) => {
-  const id = parseInt(element.id.substring(6));
+  const id = parseInt(element.id.substring(7));
 
   const isActivityOfType = (type) => element.classList.contains(type);
 
@@ -55,6 +74,7 @@ export const tryScrapeActivity = (element) => {
     [
       ["label", tryScrapeLabel],
       ["url", tryScrapeUrl],
+      ["resource", tryScrapeResource],
     ]
       .find((it) => isActivityOfType(it[0]))
       ?.at(1) ?? scrapeUnknown;
