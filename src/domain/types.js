@@ -22,7 +22,7 @@
  */
 
 /**
- * @typedef {"label" | "url" | "resource", "unknown"} ActivityType
+ * @typedef {"label" | "url" | "resource" | "unknown"} ActivityType
  */
 
 /**
