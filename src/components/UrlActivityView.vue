@@ -11,7 +11,7 @@
 
 <script>
 export default {
-  name: "UrlActivityVue",
+  name: "UrlActivityView",
   props: {
     /**
      * @type {UrlActivity}

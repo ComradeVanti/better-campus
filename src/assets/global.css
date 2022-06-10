@@ -2,91 +2,91 @@
 @import url("https://fonts.googleapis.com/icon?family=Material+Icons");
 
 :root {
-    font-size: 15px;
+  font-size: 15px;
 
-    /* Radii */
+  /* Radii */
 
-    --radius-corner: 10px;
+  --radius-corner: 10px;
 
-    /* Spacings */
+  /* Spacings */
 
-    --space-small: 7px; /* Elements make up one unit. Only applied so they don't stick right on each other */
-    --space-regular: 15px; /* Elements are thematically linked */
-    --space-large: 30px; /* Elements have no close connection */
+  --space-small: 7px; /* Elements make up one unit. Only applied so they don't stick right on each other */
+  --space-regular: 15px; /* Elements are thematically linked */
+  --space-large: 30px; /* Elements have no close connection */
 
-    /* Font-sizes */
+  /* Font-sizes */
 
-    --font-size-small: 0.9rem; /* Texts which are less important */
-    --font-size-regular: 1rem; /* Texts in paragraphs, buttons, etc. Default */
-    --font-size-large: 1.2rem; /* Headings and other emphasized text */
+  --font-size-small: 0.9rem; /* Texts which are less important */
+  --font-size-regular: 1rem; /* Texts in paragraphs, buttons, etc. Default */
+  --font-size-large: 1.2rem; /* Headings and other emphasized text */
 
-    /* Shadows */
+  /* Shadows */
 
-    --shadow-regular: 0 2px 4px -2px #2f2f2f;
+  --shadow-regular: 0 2px 4px -2px #2f2f2f;
 
-    /* Colors */
+  /* Colors */
 
-    --color-on-background: #ffffff;
-    --color-surface: #fffbfc;
-    --color-on-surface: #1d1b1e;
-    --color-surface-variant: #e7e0ec;
-    --color-on-surface-variant: #49454f;
-    --color-primary: #e0d84b;
-    --color-on-primary: #252525;
-    --color-secondary: #F495BF;
-    --color-on-secondary: #ffffff;
-    --color-error: #b3261e;
-    --color-on-error: #ffffff;
+  --color-on-background: #ffffff;
+  --color-surface: #fffbfc;
+  --color-on-surface: #1d1b1e;
+  --color-surface-variant: #e7e0ec;
+  --color-on-surface-variant: #49454f;
+  --color-primary: #e0d84b;
+  --color-on-primary: #252525;
+  --color-secondary: #f495bf;
+  --color-on-secondary: #ffffff;
+  --color-error: #b3261e;
+  --color-on-error: #ffffff;
 }
 
 * {
-    font-family: "Lato", sans-serif;
-    font-size: var(--font-size-regular);
-    color: inherit;
+  font-family: "Lato", sans-serif;
+  font-size: var(--font-size-regular);
+  color: inherit;
 }
 
 body {
-    width: 100vw;
-    height: 100vh;
-    overflow: hidden;
-    margin: 0;
-    color: var(--color-on-background);
-    background-size: cover;
-    background-position: center;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  margin: 0;
+  color: var(--color-on-background);
+  background-size: cover;
+  background-position: center;
 }
 
 .background,
 body {
-    color: var(--color-on-background);
+  color: var(--color-on-background);
 }
 
 .surface {
-    background-color: var(--color-surface);
-    color: var(--color-on-surface);
+  background-color: var(--color-surface);
+  color: var(--color-on-surface);
 }
 
 .surface-variant {
-    background-color: var(--color-surface-variant);
-    color: var(--color-on-surface-variant);
+  background-color: var(--color-surface-variant);
+  color: var(--color-on-surface-variant);
 }
 
 .primary {
-    background-color: var(--color-primary);
-    color: var(--color-on-primary);
+  background-color: var(--color-primary);
+  color: var(--color-on-primary);
 }
 
 .secondary {
-    background-color: var(--color-secondary);
-    color: var(--color-on-secondary);
+  background-color: var(--color-secondary);
+  color: var(--color-on-secondary);
 }
 
 .error {
-    background-color: var(--color-error);
-    color: var(--color-on-error);
+  background-color: var(--color-error);
+  color: var(--color-on-error);
 }
 
 .card {
-    padding: var(--space-small) var(--space-regular);
-    border-radius: var(--radius-corner);
-    box-shadow: var(--shadow-regular);
+  padding: var(--space-small) var(--space-regular);
+  border-radius: var(--radius-corner);
+  box-shadow: var(--shadow-regular);
 }

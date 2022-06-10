@@ -1,5 +1,7 @@
 import { findTextUnder, readAfter } from "./scanUtil.js";
 
+const resourceTypeNameRegex = /.*\/(?<typename>[^-]+)-.*/;
+
 /**
  * @param {HTMLElement} element
  * @param {id} id
@@ -50,7 +52,9 @@ const tryScrapeResource = (element, id) => {
   const nameElement = element.querySelector(".instancename");
   const descriptionElement = element.querySelector(".no-overflow>.no-overflow");
 
-  const typeName = imgElement?.getAttribute("role");
+  const typeName = imgElement
+    ? resourceTypeNameRegex.exec(imgElement.src).groups.typename
+    : null;
   const name = nameElement?.firstChild?.textContent;
   const description = descriptionElement?.innerHTML;
 
