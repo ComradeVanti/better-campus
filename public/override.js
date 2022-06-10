@@ -58,7 +58,11 @@ const runScripts = () => {
   document.documentElement.style.display = "none";
 
   const pageName = tryGetPageName();
-  if (!pageName) document.documentElement.style.display = "initial";
+  if (pageName) {
+  } else {
+    document.documentElement.style.display = "initial";
+    return;
+  }
 
   const overrideDoc = await getOverrideDocAsync(pageName);
   const scraper = await getScraperAsync(pageName);
