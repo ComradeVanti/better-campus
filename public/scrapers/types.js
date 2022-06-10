@@ -5,10 +5,3 @@
  * @param {E} element
  * @return {T | null}
  */
-
-/**
- * @template T
- * @callback ScrapeDoc
- * @param {Document} doc
- * @return {T | null}
- */

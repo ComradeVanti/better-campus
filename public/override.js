@@ -35,7 +35,7 @@ const getOverrideDocAsync = async (pageName) => {
 
 /**
  * @param {string} pageName
- * @return {Promise<ScrapeDoc<any>>}
+ * @return {Promise<ScrapeElement<HTMLElement, any>>}
  */
 const getScraperAsync = async (pageName) => {
   const filePath = `scrapers/${pageName}ScanData.js`;
@@ -67,7 +67,7 @@ const runScripts = () => {
   const overrideDoc = await getOverrideDocAsync(pageName);
   const scraper = await getScraperAsync(pageName);
 
-  const data = scraper(document);
+  const data = scraper(document.documentElement);
   if (data) {
     document.replaceChild(
       overrideDoc.documentElement,

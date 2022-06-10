@@ -1,10 +1,7 @@
 /**
- * @type {ScrapeDoc<string>}
+ * @type {ScrapeElement<HTMLElement, string>}
  */
-export const tryScrapeLoginToken = (doc) => {
-  /**
-   * @type {HTMLInputElement|null}
-   */
-  const element = doc.querySelector("input[name='logintoken']");
-  return element?.value ?? null;
+export const tryScrapeLoginToken = (element) => {
+  const input = element.querySelector("input[name='logintoken']");
+  return input?.value ?? null;
 };

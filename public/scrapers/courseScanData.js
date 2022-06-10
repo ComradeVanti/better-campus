@@ -3,13 +3,14 @@ import { tryScrapeCourseNav } from "./courseNav.js";
 import { tryScrapeCourseContent } from "./courseContent.js";
 
 /**
- * @type {ScrapeDoc<CourseScanData>}
+ * @type {ScrapeElement<HTMLElement, CourseScanData>}
  */
-export const tryScrapePage = (doc) => {
-  const contentElement = doc.querySelector(".course-content");
+export const tryScrapePage = (element) => {
+  const head = document.querySelector("head");
+  const contentElement = element.querySelector(".course-content");
 
-  const sessKey = tryScrapeSessKey(doc.head);
-  const courseNav = tryScrapeCourseNav(doc);
+  const sessKey = tryScrapeSessKey(head);
+  const courseNav = tryScrapeCourseNav(element);
   const courseContent = tryScrapeCourseContent(contentElement);
 
   return sessKey && courseNav && courseContent

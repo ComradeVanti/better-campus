@@ -5,10 +5,12 @@ const semesterContainersSelector =
   ".block_navigation>.card-body>.card-text>ul>li>ul>li:nth-child(3)>ul>li:nth-child(n+3)";
 
 /**
- * @type {ScrapeDoc<CourseNav>}
+ * @type {ScrapeElement<HTMLElement, CourseNav>}
  */
-export const tryScrapeCourseNav = (doc) => {
-  const semesterContainers = doc.querySelectorAll(semesterContainersSelector);
+export const tryScrapeCourseNav = (element) => {
+  const semesterContainers = element.querySelectorAll(
+    semesterContainersSelector
+  );
   const semesters = tryScanEach(semesterContainers, tryScrapeSemester);
   return semesters !== null ? { semesters } : null;
 };

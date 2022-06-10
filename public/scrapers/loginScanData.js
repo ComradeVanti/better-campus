@@ -1,10 +1,10 @@
 import { tryScrapeLoginToken } from "./loginToken.js";
 
 /**
- * @type {ScrapeDoc<LoginScanData>}
+ * @type {ScrapeElement<HTMLElement, LoginScanData>}
  */
-export const tryScrapePage = (doc) => {
-  const loginToken = tryScrapeLoginToken(doc);
+export const tryScrapePage = (element) => {
+  const loginToken = tryScrapeLoginToken(element);
 
   return loginToken ? { loginToken } : null;
 };
