@@ -1,4 +1,5 @@
 import { tryScrapeLoginToken } from "../loginToken.js";
+import { nullIfAnyKeyNull } from "../scanUtil.js";
 
 /**
  * @type {ScrapePage<LoginPageData>}
@@ -6,5 +7,5 @@ import { tryScrapeLoginToken } from "../loginToken.js";
 export const tryScrapePage = (element) => {
   const loginToken = tryScrapeLoginToken(element);
 
-  return loginToken ? { loginToken } : null;
+  return nullIfAnyKeyNull({ loginToken });
 };

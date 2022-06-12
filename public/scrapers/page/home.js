@@ -1,5 +1,6 @@
 import { tryScrapeSessKey } from "../sessKey.js";
 import { tryScrapeCourseNav } from "../courseNav.js";
+import { nullIfAnyKeyNull } from "../scanUtil.js";
 
 /**
  * @type {ScrapePage<HomePageData>}
@@ -11,5 +12,5 @@ export const tryScrapePage = (element) => {
   const sessKey = tryScrapeSessKey(head);
   const courseNav = tryScrapeCourseNav(element);
 
-  return sessKey && courseNav ? { sessKey, courseNav } : null;
+  return nullIfAnyKeyNull({ sessKey, courseNav });
 };

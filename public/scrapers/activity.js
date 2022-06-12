@@ -1,4 +1,4 @@
-import { findTextUnder } from "./scanUtil.js";
+import { findTextUnder, nullIfAnyKeyNull } from "./scanUtil.js";
 
 const resourceTypeNameRegex = /.*\/(?<typename>[^-]+)-.*/;
 
@@ -39,7 +39,7 @@ const tryScrapeUrl = (element, id) => {
   const afterContentElement = element.querySelector(".contentafterlink");
   const lines = afterContentElement ? findTextUnder(afterContentElement) : [];
 
-  return { id, type: "url", url, linkName, lines };
+  return nullIfAnyKeyNull({ id, type: "url", url, linkName, lines });
 };
 
 /**
@@ -58,9 +58,13 @@ const tryScrapeResource = (element, id) => {
   const name = nameElement?.firstChild?.textContent;
   const description = descriptionElement?.innerHTML;
 
-  return typeName !== null && name !== null && description !== null
-    ? { id, type: "resource", typeName, name, description }
-    : null;
+  return nullIfAnyKeyNull({
+    id,
+    type: "resource",
+    typeName,
+    name,
+    description,
+  });
 };
 
 /**

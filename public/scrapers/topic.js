@@ -1,5 +1,5 @@
 import { tryScrapeActivity } from "./activity.js";
-import { tryScanEach } from "./scanUtil.js";
+import { nullIfAnyKeyNull, tryScanEach } from "./scanUtil.js";
 
 /**
  * @type {ScrapeElement<HTMLElement, id>}
@@ -34,7 +34,5 @@ export const tryExtractTopic = (element) => {
   const name = tryScrapeName(element);
   const activities = tryScrapeActivities(element);
 
-  return id !== null && name !== null && activities != null
-    ? { id, name, activities }
-    : null;
+  return nullIfAnyKeyNull({ id, name, activities });
 };

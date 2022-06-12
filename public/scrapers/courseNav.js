@@ -1,5 +1,5 @@
 import { tryScrapeSemester } from "./semester.js";
-import { tryScanEach } from "./scanUtil.js";
+import { nullIfAnyKeyNull, tryScanEach } from "./scanUtil.js";
 
 const semesterContainersSelector =
   ".block_navigation>.card-body>.card-text>ul>li>ul>li:nth-child(3)>ul>li:nth-child(n+3)";
@@ -12,5 +12,5 @@ export const tryScrapeCourseNav = (element) => {
     semesterContainersSelector
   );
   const semesters = tryScanEach(semesterContainers, tryScrapeSemester);
-  return semesters !== null ? { semesters } : null;
+  return nullIfAnyKeyNull({ semesters });
 };

@@ -1,4 +1,4 @@
-import { readAfter } from "./scanUtil.js";
+import { nullIfAnyKeyNull, readAfter } from "./scanUtil.js";
 
 const courseInfoRegex =
   /^[- ]*(?<name>.+) ((?<format>[A-Z]{2,3})|-).*\((?<lecturers>.*)\)/;
@@ -29,5 +29,5 @@ export const tryScrapeCourse = (element) => {
   const name = tryScrapeName(linkElement);
   const id = tryScrapeId(linkElement);
 
-  return name !== null && id !== null ? { name, id } : null;
+  return nullIfAnyKeyNull({ name, id });
 };

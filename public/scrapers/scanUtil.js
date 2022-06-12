@@ -19,6 +19,14 @@ function nullIfAnyNull(items) {
 }
 
 /**
+ * @param {Record<string, any | null>} o
+ * @return {null | Record<string, any>}
+ */
+export function nullIfAnyKeyNull(o) {
+  return Object.values(o).every((it) => it !== null) ? o : null;
+}
+
+/**
  * @template E
  * @template T
  * @param {ArrayLike<E> | HTMLCollection | E[]} elements

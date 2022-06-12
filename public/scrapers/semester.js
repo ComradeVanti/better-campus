@@ -1,5 +1,5 @@
 import { tryScrapeCourse } from "./course.js";
-import { tryScanEach } from "./scanUtil.js";
+import { nullIfAnyKeyNull, tryScanEach } from "./scanUtil.js";
 
 const semesterIdRegex = /(?<season>WS|SS)(?<year>\d{4})/;
 
@@ -32,5 +32,5 @@ export const tryScrapeSemester = (element) => {
   const id = tryScrapeId(labelElement);
   const courses = tryScanEach(courseElements, tryScrapeCourse);
 
-  return id !== null && courses !== null ? { id, courses } : null;
+  return nullIfAnyKeyNull({ id, courses });
 };
