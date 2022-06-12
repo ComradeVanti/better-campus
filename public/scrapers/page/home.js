@@ -1,6 +1,6 @@
-import { tryScrapeSessKey } from "../sessKey.js";
-import { tryScrapeCourseNav } from "../courseNav.js";
-import { nullIfAnyKeyNull } from "../util/scanUtil.js";
+import { tryScrapeSessKey } from "../data/sessKey.js";
+import { tryScrapeCourseNav } from "../data/courseNav.js";
+import { nullIfAnyKeyNull } from "../scanUtil.js";
 
 /**
  * @type {ScrapePage<HomePageData>}

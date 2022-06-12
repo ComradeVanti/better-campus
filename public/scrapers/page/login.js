@@ -1,5 +1,5 @@
-import { tryScrapeLoginToken } from "../loginToken.js";
-import { nullIfAnyKeyNull } from "../util/scanUtil.js";
+import { tryScrapeLoginToken } from "../data/loginToken.js";
+import { nullIfAnyKeyNull } from "../scanUtil.js";
 
 /**
  * @type {ScrapePage<LoginPageData>}

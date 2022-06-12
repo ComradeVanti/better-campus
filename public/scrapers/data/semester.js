@@ -1,5 +1,5 @@
 import { tryScrapeCourse } from "./course.js";
-import { nullIfAnyKeyNull, tryScanEach } from "./util/scanUtil.js";
+import { nullIfAnyKeyNull, tryScanEach } from "../scanUtil.js";
 
 const semesterIdRegex = /(?<season>WS|SS)(?<year>\d{4})/;
 
