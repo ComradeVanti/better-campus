@@ -1,4 +1,4 @@
-import { findTextUnder, nullIfAnyKeyNull } from "./scanUtil.js";
+import { findTextUnder, nullIfAnyKeyNull } from "./util/scanUtil.js";
 
 const resourceTypeNameRegex = /.*\/(?<typename>[^-]+)-.*/;
 

@@ -1,4 +1,4 @@
-import { nullIfAnyKeyNull, readAfter } from "./scanUtil.js";
+import { nullIfAnyKeyNull, readAfter } from "./util/scanUtil.js";
 
 const courseInfoRegex =
   /^[- ]*(?<name>.+) ((?<format>[A-Z]{2,3})|-).*\((?<lecturers>.*)\)/;

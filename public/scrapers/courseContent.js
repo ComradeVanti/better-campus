@@ -1,5 +1,5 @@
 import { tryExtractTopic } from "./topic.js";
-import { nullIfAnyKeyNull, tryScanEach } from "./scanUtil.js";
+import { nullIfAnyKeyNull, tryScanEach } from "./util/scanUtil.js";
 
 /**
  * @type {ScrapeElement<HTMLElement, CourseContent>}
