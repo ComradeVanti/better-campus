@@ -1,7 +1,7 @@
-import { tryScrapeLoginToken } from "./loginToken.js";
+import { tryScrapeLoginToken } from "../loginToken.js";
 
 /**
- * @type {ScrapeElement<HTMLElement, LoginScanData>}
+ * @type {ScrapePage<LoginPageData>}
  */
 export const tryScrapePage = (element) => {
   const loginToken = tryScrapeLoginToken(element);

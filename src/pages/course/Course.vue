@@ -41,7 +41,7 @@ export default {
   data() {
     return {
       /**
-       * @type {CourseScanData | null}
+       * @type {CoursePageData | null}
        */
       scanData: null
     };

@@ -35,10 +35,10 @@ const getOverrideDocAsync = async (pageName) => {
 
 /**
  * @param {string} pageName
- * @return {Promise<ScrapeElement<HTMLElement, any>>}
+ * @return {Promise<ScrapePage<any>>}
  */
 const getScraperAsync = async (pageName) => {
-  const filePath = `scrapers/${pageName}ScanData.js`;
+  const filePath = `scrapers/page/${pageName}.js`;
   const url = getExtensionUrl(filePath);
   const { tryScrapePage: scraper } = await import(url);
   return scraper ?? (() => ({}));

@@ -19,7 +19,7 @@ export default {
   data() {
     return {
       /**
-       * @type {HomeScanData}
+       * @type {HomePageData}
        */
       scanData: {
         sessKey: "",

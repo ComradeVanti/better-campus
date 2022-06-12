@@ -1,4 +1,4 @@
 /**
- * @typedef {Object} LoginScanData
+ * @typedef {Object} LoginPageData
  * @property {string} loginToken
  */

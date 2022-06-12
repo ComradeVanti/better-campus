@@ -34,7 +34,7 @@ export default {
   data() {
     return {
       /**
-       * @type {LoginScanData}
+       * @type {LoginPageData}
        */
       scanData: { loginToken: "" },
     };

@@ -1,4 +1,4 @@
-import { findTextUnder, readAfter } from "./scanUtil.js";
+import { findTextUnder } from "./scanUtil.js";
 
 const resourceTypeNameRegex = /.*\/(?<typename>[^-]+)-.*/;
 

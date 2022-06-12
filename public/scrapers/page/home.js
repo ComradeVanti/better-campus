@@ -1,8 +1,8 @@
-import { tryScrapeSessKey } from "./sessKey.js";
-import { tryScrapeCourseNav } from "./courseNav.js";
+import { tryScrapeSessKey } from "../sessKey.js";
+import { tryScrapeCourseNav } from "../courseNav.js";
 
 /**
- * @type {ScrapeElement<HTMLElement, HomeScanData>}
+ * @type {ScrapePage<HomePageData>}
  */
 
 export const tryScrapePage = (element) => {

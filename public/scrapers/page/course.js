@@ -1,9 +1,9 @@
-import { tryScrapeSessKey } from "./sessKey.js";
-import { tryScrapeCourseNav } from "./courseNav.js";
-import { tryScrapeCourseContent } from "./courseContent.js";
+import { tryScrapeSessKey } from "../sessKey.js";
+import { tryScrapeCourseNav } from "../courseNav.js";
+import { tryScrapeCourseContent } from "../courseContent.js";
 
 /**
- * @type {ScrapeElement<HTMLElement, CourseScanData>}
+ * @type {ScrapePage<CoursePageData>}
  */
 export const tryScrapePage = (element) => {
   const head = document.querySelector("head");
